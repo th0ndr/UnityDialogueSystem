@@ -196,6 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519870824}
   - component: {fileID: 519870823}
+  - component: {fileID: 519870825}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -217,6 +218,8 @@ MonoBehaviour:
   dialogueText: {fileID: 25660008}
   imageText: {fileID: 1278164725}
   animator: {fileID: 642168867}
+  waitTime: 0.01
+  voiceVolume: 1
 --- !u!4 &519870824
 Transform:
   m_ObjectHideFlags: 0
@@ -230,6 +233,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &519870825
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519870822}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &642168863
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,18 +673,13 @@ MonoBehaviour:
     - character: {fileID: 114280140322085800, guid: 69a1b9777085a449c8d5cfb5cb89f3ff,
         type: 2}
       text:
-      - 'Winston:
-
-        Hi'
-      - "Winston:\nMy name is mario\t"
-      - 'Winston:
-
-        I like people'
+      - Guys have you seen my [40]friend [250]Harambe?
+      - He was here yesterday wtf
     - character: {fileID: 114685546352751460, guid: 4740554d7f7924e8eb18caae9023c7ce,
         type: 2}
       text:
-      - I like..
-      - Big booty bitches.
+      - bro
+      - im in heaven now
 --- !u!114 &1151631948
 MonoBehaviour:
   m_ObjectHideFlags: 0

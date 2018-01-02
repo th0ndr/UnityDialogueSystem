@@ -54,3 +54,4 @@ MonoBehaviour:
   name: Winston
   standardExpression: {fileID: 21300000, guid: 5d8048aa68f034a8495a96aaf8981c08, type: 3}
   expressions: []
+  voice: {fileID: 8300000, guid: 604037fcbc6124a509094445b9113ad3, type: 3}
