@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Character : MonoBehaviour
+[CreateAssetMenu(fileName = "New Character", menuName = "Character")]
+public class Character : ScriptableObject
 {
-	public string name;
+	public string characterName;
 	public Sprite standardExpression;
 	public Expression[] expressions;
 	public AudioClip voice;

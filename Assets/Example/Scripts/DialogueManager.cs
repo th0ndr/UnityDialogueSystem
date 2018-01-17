@@ -4,18 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
-	[HideInInspector]
+	
 	public Text dialogueText;
-
-	[HideInInspector]
 	public Image imageText;
-
-	[HideInInspector]
 	public Animator animator;
-
-	[HideInInspector]
 	public float waitTime = .01f;
-
 	public float voiceVolume = 1f;
 
 
@@ -23,7 +16,9 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<Sprite> sprites;
 	private Queue<AudioClip> voices;
 	private AudioSource source;
-	private bool betweenChars = true;
+	private bool betweenChars = true, parsing, finished;
+	private string timeString;
+
 
 
 	void Start () 
@@ -80,14 +75,15 @@ public class DialogueManager : MonoBehaviour {
 		AudioClip audio = voices.Dequeue ();
 
 		StopAllCoroutines();
-
+		waitTime = 0f;
+		finished = false;
 		StartCoroutine(TypeSentence(sentence, audio));
 	}
 
 	IEnumerator TypeSentence(string sentence, AudioClip audio)
 	{
-		string time = "";
-		bool parsing = false;
+		timeString = "";
+		parsing = false;
 		dialogueText.text = "";
 		foreach(char letter in sentence.ToCharArray())
 		{
@@ -99,15 +95,16 @@ public class DialogueManager : MonoBehaviour {
 
 			if (parsing) 
 			{
-				parsing = true;
-				if (letter == ']') {
+				if (letter == ']')
+				{
 					parsing = false;
-					waitTime = float.Parse (time) * .001f;
-					time = "";
+					waitTime = float.Parse (timeString) * .001f;
+					timeString = "";
 				} 
 
-				if (letter != '[' && letter != ']') {
-					time += letter;
+				if (letter != '[' && letter != ']')
+				{
+					timeString += letter;
 				}
 
 			}
