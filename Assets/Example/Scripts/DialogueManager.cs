@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<Sprite> sprites;
 	private Queue<AudioClip> voices;
 	private AudioSource source;
-	private bool betweenChars = true, parsing, finished;
+	private bool betweenChars = true, parsing, finished = false;
 	private string timeString;
 
 
@@ -32,9 +32,12 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Z)) 
+		if (Input.GetKeyDown (KeyCode.Z) && finished) 
 		{
+			
 			DisplayNextSentence ();
+			finished = false;
+
 		}
 	}
 
@@ -76,7 +79,6 @@ public class DialogueManager : MonoBehaviour {
 
 		StopAllCoroutines();
 		waitTime = 0f;
-		finished = false;
 		StartCoroutine(TypeSentence(sentence, audio));
 	}
 
@@ -85,8 +87,10 @@ public class DialogueManager : MonoBehaviour {
 		timeString = "";
 		parsing = false;
 		dialogueText.text = "";
+
 		foreach(char letter in sentence.ToCharArray())
 		{
+			
 
 			if (letter == '[') 
 			{
@@ -110,12 +114,19 @@ public class DialogueManager : MonoBehaviour {
 			}
 			else
 			{
+				if(Input.GetKeyDown(KeyCode.Z) && finished == false)
+				{
+					dialogueText.text = sentence;
+					finished = true;
+					yield break;
+				}
 				dialogueText.text += letter;
 				source.PlayOneShot (audio, voiceVolume);
 				yield return new WaitForSeconds(waitTime);
 			}
 
 		}
+		finished = true;
 	}
 
 

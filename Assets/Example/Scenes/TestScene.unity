@@ -670,16 +670,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - character: {fileID: 114280140322085800, guid: 69a1b9777085a449c8d5cfb5cb89f3ff,
-        type: 2}
+    - character: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff, type: 2}
       text:
       - Guys have you seen my [40]friend [250]Harambe?
-      - He was here yesterday wtf
-    - character: {fileID: 114685546352751460, guid: 4740554d7f7924e8eb18caae9023c7ce,
-        type: 2}
+      - Guys have you seen my [40]friend [250]Harambe?
+    - character: {fileID: 11400000, guid: 0a8d906362093444ea8bcf3446e28647, type: 2}
       text:
-      - bro
-      - im in heaven now
+      - Guys have you seen my [40]friend [250]Harambe?
+      - Guys have you seen my [40]friend [250]Harambe?
 --- !u!114 &1151631948
 MonoBehaviour:
   m_ObjectHideFlags: 0
