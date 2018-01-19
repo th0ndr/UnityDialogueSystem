@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour {
 	public Animator animator;
 	public float waitTime = .01f;
 	public float voiceVolume = 1f;
+	public bool doubleTap = true;
 
 
 	private Queue<string> sentences;
@@ -32,12 +33,18 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Z) && finished) 
+		if (Input.GetKeyDown (KeyCode.Z) && finished && doubleTap) 
 		{
 			
 			DisplayNextSentence ();
 			finished = false;
 
+		}
+
+		if (Input.GetKeyDown (KeyCode.Z) && doubleTap == false)
+		{
+			finished = true;
+			DisplayNextSentence ();
 		}
 	}
 
@@ -70,6 +77,7 @@ public class DialogueManager : MonoBehaviour {
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
+			StopAllCoroutines();
 			return;
 		}
 
