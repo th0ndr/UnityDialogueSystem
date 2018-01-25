@@ -220,6 +220,7 @@ MonoBehaviour:
   animator: {fileID: 642168867}
   waitTime: 0.01
   voiceVolume: 1
+  doubleTap: 1
 --- !u!4 &519870824
 Transform:
   m_ObjectHideFlags: 0

@@ -107,6 +107,7 @@ public class DialogueManager : MonoBehaviour {
 
 			if (parsing) 
 			{
+
 				if (letter == ']')
 				{
 					parsing = false;
@@ -117,20 +118,27 @@ public class DialogueManager : MonoBehaviour {
 				if (letter != '[' && letter != ']')
 				{
 					timeString += letter;
+
 				}
+
+
 
 			}
 			else
 			{
-				if(Input.GetKeyDown(KeyCode.Z) && finished == false)
+				if (Input.GetKeyDown (KeyCode.Z) && finished == false)
 				{
-					dialogueText.text = sentence;
+					Debug.Log ("Detectado");
+					dialogueText.text = ParseSentence (sentence);
 					finished = true;
 					yield break;
+				} 
+				else 
+				{
+					dialogueText.text += letter;
+					source.PlayOneShot (audio, voiceVolume);
+					yield return new WaitForSeconds (waitTime);
 				}
-				dialogueText.text += letter;
-				source.PlayOneShot (audio, voiceVolume);
-				yield return new WaitForSeconds(waitTime);
 			}
 
 		}
@@ -142,5 +150,34 @@ public class DialogueManager : MonoBehaviour {
 	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+	}
+
+	string ParseSentence(string sentence)
+	{
+		string parsedSentence = "";
+		bool normalSentence = true;
+		foreach (char letter in sentence.ToCharArray()) 
+		{
+			if (letter == '[') 
+			{
+				normalSentence = false;
+			}
+
+			if (letter == ']') 
+			{
+				normalSentence = true;
+			}
+			if (normalSentence) 
+			{
+				if (letter != ']')
+				{
+					parsedSentence += letter;
+				}
+
+			}
+
+		}
+
+		return parsedSentence;
 	}
 }
