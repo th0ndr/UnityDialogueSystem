@@ -17,8 +17,9 @@ public class DialogueManager : MonoBehaviour {
 	private Queue<Sprite> sprites;
 	private Queue<AudioClip> voices;
 	private AudioSource source;
-	private bool betweenChars = true, parsing, finished = false;
-	private string timeString;
+    private AudioClip audioQueue;
+	private bool parsing, finished;
+	private string timeString, sentence;
 
 
 
@@ -82,15 +83,15 @@ public class DialogueManager : MonoBehaviour {
 		}
 
 		imageText.sprite = sprites.Dequeue ();
-		string sentence = sentences.Dequeue();
-		AudioClip audio = voices.Dequeue ();
+		sentence = sentences.Dequeue();
+		audioQueue = voices.Dequeue ();
 
 		StopAllCoroutines();
 		waitTime = 0f;
-		StartCoroutine(TypeSentence(sentence, audio));
+		StartCoroutine(TypeSentence(sentence, audioQueue));
 	}
 
-	IEnumerator TypeSentence(string sentence, AudioClip audio)
+	IEnumerator TypeSentence(string sentence, AudioClip audioQueue)
 	{
 		timeString = "";
 		parsing = false;
@@ -128,7 +129,6 @@ public class DialogueManager : MonoBehaviour {
 			{
 				if (Input.GetKeyDown (KeyCode.Z) && finished == false)
 				{
-					Debug.Log ("Detectado");
 					dialogueText.text = ParseSentence (sentence);
 					finished = true;
 					yield break;
@@ -136,7 +136,7 @@ public class DialogueManager : MonoBehaviour {
 				else 
 				{
 					dialogueText.text += letter;
-					source.PlayOneShot (audio, voiceVolume);
+					source.PlayOneShot (audioQueue, voiceVolume);
 					yield return new WaitForSeconds (waitTime);
 				}
 			}

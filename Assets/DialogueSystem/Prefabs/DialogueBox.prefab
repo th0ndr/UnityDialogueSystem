@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222402555516436978}
   - component: {fileID: 114695109154023176}
   m_Layer: 5
-  m_Name: CharacteImage
+  m_Name: CharacterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376503998812264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -221,7 +221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.5881286, y: -56.530544}
+  m_AnchoredPosition: {x: -2.5881348, y: -56.53055}
   m_SizeDelta: {x: 434, y: 113.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224890551174235954

@@ -620,12 +620,12 @@ MonoBehaviour:
     sentences:
     - character: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff, type: 2}
       text:
-      - Guys have you seen my [40]friend [250]Harambe?
-      - He was here yesterday WTF.
+      - '[500]T aprexio '
+      - <3
     - character: {fileID: 11400000, guid: 0a8d906362093444ea8bcf3446e28647, type: 2}
       text:
-      - Hi bro.
-      - I AM [500] DEAD
+      - yo [600]tambien
+      - '[900]aiuda'
 --- !u!114 &1151631948
 MonoBehaviour:
   m_ObjectHideFlags: 0
