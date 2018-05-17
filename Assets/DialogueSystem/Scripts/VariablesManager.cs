@@ -5,26 +5,27 @@ using UnityEngine;
 public class VariablesManager : MonoBehaviour {
     
     [SerializeField]
-    IntegerDictionary m_integerDictionary;
+    public IntegerDictionary integerDictionary;
     public IDictionary<string, int> IntegerDictionary
     {
-        get { return m_integerDictionary; }
-        set { m_integerDictionary.CopyFrom(value); }
+        get { return integerDictionary; }
+        set { integerDictionary.CopyFrom(value); }
     }
 
 
-    private static VariablesManager instance = null;
+    public static VariablesManager instance = null;
 
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

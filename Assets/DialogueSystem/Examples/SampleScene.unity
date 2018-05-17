@@ -129,11 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040bb6f5d57e44bdba348e716ba82a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_integerDictionary:
+  integerDictionary:
     m_keys:
-    - canasta
-    - calabaza
-    m_values: 0300000004000000
+    - pene
+    m_values: f4010000
 --- !u!1001 &794076519
 Prefab:
   m_ObjectHideFlags: 0

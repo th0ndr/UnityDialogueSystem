@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
         {
             dialogue.TriggerDialogue();
         }
+
+        Debug.Log(VariablesManager.instance.IntegerDictionary["pene"]);
 	}
 
 }
