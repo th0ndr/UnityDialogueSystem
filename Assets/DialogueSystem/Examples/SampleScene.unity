@@ -113,6 +113,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &361979760 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1444325007202960, guid: f179273886f664410813061b0d4ffe3b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1827332464}
+--- !u!114 &361979761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 361979760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040bb6f5d57e44bdba348e716ba82a39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_integerDictionary:
+    m_keys:
+    - canasta
+    - calabaza
+    m_values: 0300000004000000
 --- !u!1001 &794076519
 Prefab:
   m_ObjectHideFlags: 0
@@ -123,11 +144,16 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogue.sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0].text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1].text.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4441284408085898, guid: d2d84e0c10f494f02844f6a3cd7a000b, type: 2}
@@ -171,11 +197,27 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0].text.Array.data[0]
-      value: Hello Guys.
+      value: QUE PEDO [500]PERROS
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogue.sentences.Array.data[0].text.Array.data[1]
+      value: I love you all.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1].character
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a8d906362093444ea8bcf3446e28647,
+        type: 2}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1].text.Array.data[0]
+      value: ME LLAMO [300]WINSTON
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogue.sentences.Array.data[1].text.Array.data[1]
       value: I love you all.
       objectReference: {fileID: 0}
     m_RemovedComponents: []

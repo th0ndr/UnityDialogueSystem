@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class VariablesManager : MonoBehaviour {
+    
+    [SerializeField]
+    IntegerDictionary m_integerDictionary;
+    public IDictionary<string, int> IntegerDictionary
+    {
+        get { return m_integerDictionary; }
+        set { m_integerDictionary.CopyFrom(value); }
+    }
 
-    public static IntegerFlag[] integerFlags;
 
     private static VariablesManager instance = null;
 
