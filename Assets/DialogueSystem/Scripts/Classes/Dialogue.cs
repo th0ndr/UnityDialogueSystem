@@ -9,8 +9,10 @@ using UnityEngine;
 public class Dialogue
 {
 
- 
+    public string variableName;
+    public int variableValue;
 	public Sentence[] sentences;
+
 
 
 

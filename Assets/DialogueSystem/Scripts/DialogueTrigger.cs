@@ -5,14 +5,28 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour 
 {
 
-    public Dialogue dialogue;
+    public Dialogue[] dialogues;
+
 
 	public void TriggerDialogue()
 	{
-		FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
+        foreach (Dialogue dialogue in dialogues)
+        {
+
+            if(VariablesManager.instance.integerDictionary[dialogue.variableName] == dialogue.variableValue)
+            {
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                break;
+            }
+
+                
+        }
+		
 	}
+	
 
    
 
 }
      
+

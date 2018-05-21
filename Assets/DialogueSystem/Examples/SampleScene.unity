@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   integerDictionary:
     m_keys:
-    - pene
-    m_values: f4010000
+    - 'pene '
+    m_values: 20030000
 --- !u!1001 &794076519
 Prefab:
   m_ObjectHideFlags: 0
@@ -142,7 +142,22 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
       propertyPath: dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
@@ -154,6 +169,21 @@ Prefab:
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1].text.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0].text.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0].text.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1].text.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441284408085898, guid: d2d84e0c10f494f02844f6a3cd7a000b, type: 2}
       propertyPath: m_LocalPosition.x
@@ -218,6 +248,59 @@ Prefab:
         type: 2}
       propertyPath: dialogue.sentences.Array.data[1].text.Array.data[1]
       value: I love you all.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].variableName
+      value: pene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].variableValue
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].variableName
+      value: pene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].variableValue
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0].character
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff,
+        type: 2}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0].text.Array.data[0]
+      value: hola
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0].character
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff,
+        type: 2}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1].character
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a8d906362093444ea8bcf3446e28647,
+        type: 2}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0].text.Array.data[0]
+      value: Sexo [300]anal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1].text.Array.data[0]
+      value: Sexo [300]oral
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2d84e0c10f494f02844f6a3cd7a000b, type: 2}
