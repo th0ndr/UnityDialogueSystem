@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,7 +39,6 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
-  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -113,26 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &361979760 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1444325007202960, guid: f179273886f664410813061b0d4ffe3b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1827332464}
---- !u!114 &361979761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 361979760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 040bb6f5d57e44bdba348e716ba82a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  integerDictionary:
-    m_keys:
-    - 'pene '
-    m_values: 20030000
 --- !u!1001 &794076519
 Prefab:
   m_ObjectHideFlags: 0
@@ -158,7 +138,7 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[1].sentences.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
@@ -252,7 +232,7 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[0].variableName
-      value: pene
+      value: var
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
@@ -262,7 +242,7 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[1].variableName
-      value: pene
+      value: var
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
@@ -295,7 +275,7 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[0].text.Array.data[0]
-      value: Sexo [300]anal
+      value: Variable 800
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}

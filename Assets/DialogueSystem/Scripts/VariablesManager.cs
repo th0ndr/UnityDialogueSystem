@@ -6,11 +6,7 @@ public class VariablesManager : MonoBehaviour {
     
     [SerializeField]
     public IntegerDictionary integerDictionary;
-    public IDictionary<string, int> IntegerDictionary
-    {
-        get { return integerDictionary; }
-        set { integerDictionary.CopyFrom(value); }
-    }
+    
 
 
     public static VariablesManager instance = null;

@@ -75,6 +75,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void DisplayNextSentence()
 	{
+        print( sentences.Count );
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
@@ -147,7 +148,7 @@ public class DialogueManager : MonoBehaviour {
 
 
 
-	void EndDialogue()
+	public void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
 	}

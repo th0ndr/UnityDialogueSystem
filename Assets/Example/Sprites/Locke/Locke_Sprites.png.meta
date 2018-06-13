@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: 85eff5c366fa9dc4eb514fef54930a4b
+timeCreated: 1527043760
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Locke_Sprites_0
+    21300002: Locke_Sprites_1
+    21300004: Locke_Sprites_2
+    21300006: Locke_Sprites_3
+    21300008: Locke_Sprites_4
+    21300010: Locke_Sprites_5
+    21300012: Locke_Sprites_6
+    21300014: Locke_Sprites_7
+    21300016: Locke_Sprites_8
+    21300018: Locke_Sprites_9
+    21300020: Locke_Sprites_10
+    21300022: Locke_Sprites_11
+    21300024: Locke_Sprites_12
+    21300026: Locke_Sprites_13
+    21300028: Locke_Sprites_14
+    21300030: Locke_Sprites_15
+    21300032: Locke_Sprites_16
+    21300034: Locke_Sprites_17
+    21300036: Locke_Sprites_18
+    21300038: Locke_Sprites_19
+    21300040: Locke_Sprites_20
+    21300042: Locke_Sprites_21
+    21300044: Locke_Sprites_22
+    21300046: Locke_Sprites_23
+    21300048: Locke_Sprites_24
+    21300050: Locke_Sprites_25
+    21300052: Locke_Sprites_26
+    21300054: Locke_Sprites_27
+    21300056: Locke_Sprites_28
+    21300058: Locke_Sprites_29
+    21300060: Locke_Sprites_30
+    21300062: Locke_Sprites_31
+    21300064: Locke_Sprites_32
+    21300066: Locke_Sprites_33
+    21300068: Locke_Sprites_34
+    21300070: Locke_Sprites_35
+    21300072: Locke_Sprites_36
+    21300074: Locke_Sprites_37
+    21300076: Locke_Sprites_38
+    21300078: Locke_Sprites_39
+    21300080: Locke_Sprites_40
+    21300082: Locke_Sprites_41
+    21300084: Locke_Sprites_42
+    21300086: Locke_Sprites_43
+    21300088: Locke_Sprites_44
+    21300090: Locke_Sprites_45
+    21300092: Locke_Sprites_46
+    21300094: Locke_Sprites_47
+    21300096: Locke_Sprites_48
+    21300098: Locke_Sprites_49
+    21300100: Locke_Sprites_50
+    21300102: Locke_Sprites_51
+    21300104: Locke_Sprites_52
+    21300106: Locke_Sprites_53
+    21300108: Locke_Sprites_54
+    21300110: Locke_Sprites_55
+    21300112: Locke_Sprites_56
+    21300114: Locke_Sprites_57
+    21300116: Locke_Sprites_58
+    21300118: Locke_Sprites_59
+    21300120: Locke_Sprites_60
+    21300122: Locke_Sprites_61
+    21300124: Locke_Sprites_62
+    21300126: Locke_Sprites_63
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Locke_Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 72
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 72
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 72
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 42
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 42
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 43
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 43
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 12
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 12
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 13
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Locke_Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 13
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

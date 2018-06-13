@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 8
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,7 +39,6 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
-  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -55,10 +54,11 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_TextureWidth: 1024
+    m_TextureHeight: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -245,6 +245,11 @@ Prefab:
       propertyPath: animator
       value: 
       objectReference: {fileID: 642168867}
+    - target: {fileID: 114731279387165590, guid: f179273886f664410813061b0d4ffe3b,
+        type: 2}
+      propertyPath: integerDictionary.m_values.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f179273886f664410813061b0d4ffe3b, type: 2}
   m_IsPrefabParent: 0
@@ -341,7 +346,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &726986975
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,16 +620,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8043a2dbc63943589ca21b9ed713988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
+  dialogues:
+  - variableName: var
+    variableValue: 1
     sentences:
     - character: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff, type: 2}
       text:
-      - '[500]T aprexio '
-      - <3
-    - character: {fileID: 11400000, guid: 0a8d906362093444ea8bcf3446e28647, type: 2}
-      text:
-      - yo [600]tambien
-      - '[900]aiuda'
+      - Hello There
 --- !u!114 &1151631948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,7 +733,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1278164723
 GameObject:
   m_ObjectHideFlags: 0
