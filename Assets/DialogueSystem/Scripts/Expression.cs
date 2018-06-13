@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Different expression faces for the characters
 [System.Serializable]
 public class Expression
 {

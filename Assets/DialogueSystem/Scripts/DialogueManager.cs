@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This class manages the text in the dialogues, the transition between sentences, animations, and such
 public class DialogueManager : MonoBehaviour {
 	
 	public Text dialogueText;
@@ -49,6 +50,7 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
+    // Start new dialogue, and reset all data from previous dialogues
 	public void StartDialogue(Dialogue dialogue)
 	{
 		animator.SetBool("IsOpen", true);
@@ -73,6 +75,7 @@ public class DialogueManager : MonoBehaviour {
 		DisplayNextSentence();
 	}
 
+    // Display next sentence in dialogue
 	public void DisplayNextSentence()
 	{
         print( sentences.Count );
@@ -92,6 +95,7 @@ public class DialogueManager : MonoBehaviour {
 		StartCoroutine(TypeSentence(sentence, audioQueue));
 	}
 
+    // Type sentence letter by letter, and parse the dialogue speed
 	IEnumerator TypeSentence(string sentence, AudioClip audioQueue)
 	{
 		timeString = "";
@@ -147,12 +151,13 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 
-
+    // Hides dialogue box
 	public void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
 	}
 
+    // Parses the sentence
 	string ParseSentence(string sentence)
 	{
 		string parsedSentence = "";
