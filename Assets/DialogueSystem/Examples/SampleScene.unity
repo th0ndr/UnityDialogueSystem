@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -123,7 +123,7 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
@@ -133,7 +133,7 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[0].sentences.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
@@ -163,6 +163,11 @@ Prefab:
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[1].text.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1].text.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4441284408085898, guid: d2d84e0c10f494f02844f6a3cd7a000b, type: 2}
@@ -253,12 +258,12 @@ Prefab:
         type: 2}
       propertyPath: dialogues.Array.data[0].sentences.Array.data[0].character
       value: 
-      objectReference: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff,
+      objectReference: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636,
         type: 2}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
       propertyPath: dialogues.Array.data[0].sentences.Array.data[0].text.Array.data[0]
-      value: hola
+      value: Im soooooo happy
       objectReference: {fileID: 0}
     - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
         type: 2}
@@ -281,6 +286,27 @@ Prefab:
         type: 2}
       propertyPath: dialogues.Array.data[1].sentences.Array.data[1].text.Array.data[0]
       value: Sexo [300]oral
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[0].expression
+      value: Happy
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1].character
+      value: 
+      objectReference: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636,
+        type: 2}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1].expression
+      value: Blush
+      objectReference: {fileID: 0}
+    - target: {fileID: 114308713709820410, guid: d2d84e0c10f494f02844f6a3cd7a000b,
+        type: 2}
+      propertyPath: dialogues.Array.data[0].sentences.Array.data[1].text.Array.data[0]
+      value: You make me [500]blush.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d2d84e0c10f494f02844f6a3cd7a000b, type: 2}
