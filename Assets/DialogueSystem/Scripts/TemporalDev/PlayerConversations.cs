@@ -10,6 +10,10 @@ namespace Assets.DialogueSystem.Scripts.TemporalDev {
         public DialogueManager DialogueManager;
         public List<PendingConversation> PendingConversations { get; set; }
 
+        private void Start() {
+            PendingConversations = new List<PendingConversation>();
+        }
+
         public void AddConversations(List<NewConversation> newConversations) {
 
             //CHECAR SI YA EXISTEN FALTA
