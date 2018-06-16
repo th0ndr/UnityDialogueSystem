@@ -6,18 +6,41 @@ using UnityEngine;
 
 namespace Assets.DialogueSystem.Scripts.TemporalDev {
     public class PlayerConversations : MonoBehaviour {
-        public List<PendingConversations> PendingConversations;
+
+        public DialogueManager DialogueManager;
+        public List<PendingConversation> PendingConversations { get; set; }
+
+        public void AddConversations(List<NewConversation> newConversations) {
+
+            //CHECAR SI YA EXISTEN FALTA
+            //ESTA CLASE VA A CAMBIAR BASTANTE
+
+            foreach( NewConversation conversation in newConversations) {
+                PendingConversations.Add( new PendingConversation {
+
+                    ConversationName = conversation.ConversationName,
+                    PendingStatus = new List<PendingStatus> {
+                        conversation.PendingStatus,
+                    },
+
+                } );
+            }
+
+
+
+        }
+
     }
 
     [Serializable]
-    public struct PendingConversations {
+    public struct PendingConversation {
         public string ConversationName;
         public List<PendingStatus> PendingStatus;
     }
 
     [Serializable]
     public struct PendingStatus {
-        public string ConversationName;
+        public string StatusName;
         public int Importance;
     }
 }
