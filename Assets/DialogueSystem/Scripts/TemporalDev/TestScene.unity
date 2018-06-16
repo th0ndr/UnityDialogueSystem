@@ -356,6 +356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 926136342}
   - component: {fileID: 926136343}
+  - component: {fileID: 926136344}
   m_Layer: 0
   m_Name: Thoughts_Conversation
   m_TagString: Untagged
@@ -370,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 926136341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.26, y: 0.476, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 790724258}
@@ -396,7 +397,8 @@ MonoBehaviour:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         text:
         - I should ask Terra and Edgar if they're ready.
-      NextStatus: []
+      NextStatus:
+      - Ask Edgar and Terra
       NewConversations: []
   - Name: Wait for Edgar and Terra
     Status:
@@ -406,6 +408,18 @@ MonoBehaviour:
         - I should wait for them
       NextStatus: []
       NewConversations: []
+--- !u!114 &926136344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 926136341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc53e916504a7d4c81f732bb7b0d281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tracked: {fileID: 1985167936}
 --- !u!1001 &1172517754
 Prefab:
   m_ObjectHideFlags: 0
@@ -696,6 +710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547249285}
   - component: {fileID: 1547249286}
+  - component: {fileID: 1547249287}
   m_Layer: 0
   m_Name: EdgarTerra_Conversation
   m_TagString: Untagged
@@ -710,7 +725,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1547249284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.852, y: -0.488, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 790724258}
@@ -755,6 +770,18 @@ MonoBehaviour:
         PendingStatus:
           StatusName: Wait for Edgar and Terra
           Importance: 0
+--- !u!114 &1547249287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547249284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc53e916504a7d4c81f732bb7b0d281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tracked: {fileID: 1985167936}
 --- !u!1001 &1647582363
 Prefab:
   m_ObjectHideFlags: 0
