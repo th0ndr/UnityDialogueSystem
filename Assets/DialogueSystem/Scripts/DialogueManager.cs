@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour {
     private AudioClip audioQueue;
 	private bool parsing, finished;
 	private string timeString, sentence;
+    private Expression expression;
 
 
 
@@ -61,11 +62,11 @@ public class DialogueManager : MonoBehaviour {
 
 		foreach(Sentence sentence in dialogue.sentences)
 		{
-
+            expression = FindExpression(sentence.expression, sentence.character);
 
 			foreach (string paragraph in sentence.text)
 			{
-				sprites.Enqueue (sentence.character.standardExpression);
+				sprites.Enqueue (expression.Image);
 				sentences.Enqueue(paragraph);
 				voices.Enqueue (sentence.character.voice);
 			}
@@ -95,6 +96,20 @@ public class DialogueManager : MonoBehaviour {
 		StartCoroutine(TypeSentence(sentence, audioQueue));
 	}
 
+    //Find Expression in characcter, by expression name
+    public Expression FindExpression(string name, Character character)
+    {
+        foreach(Expression expression in character.expressions)
+        {
+            if(expression.Name == name)
+            {
+                return (expression);
+            } 
+        }
+
+        return null;
+ 
+    }
     // Type sentence letter by letter, and parse the dialogue speed
 	IEnumerator TypeSentence(string sentence, AudioClip audioQueue)
 	{
