@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour {
 	public float waitTime = .01f;
 	public float voiceVolume = 1f;
 	public bool doubleTap = true;
-
+    public string nextKey = "z"
 
 	private Queue<string> sentences;
 	private Queue<Sprite> sprites;
@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Z) && finished && doubleTap) 
+		if (Input.GetKeyDown ("z") && finished && doubleTap) 
 		{
 			
 			DisplayNextSentence ();
@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour {
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.Z) && doubleTap == false)
+        if (Input.GetKeyDown ("z") && doubleTap == false)
 		{
 			finished = true;
 			DisplayNextSentence ();
@@ -139,7 +139,7 @@ public class DialogueManager : MonoBehaviour {
 				if (letter == ']')
 				{
 					parsing = false;
-					waitTime = float.Parse (timeString) * .001f;
+					waitTime = float.Parse (timeString);
 					timeString = "";
 				} 
 
@@ -154,7 +154,7 @@ public class DialogueManager : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetKeyDown (KeyCode.Z) && finished == false)
+				if (Input.GetKeyDown ("z") && finished == false)
 				{
 					dialogueText.text = ParseSentence (sentence);
 					finished = true;
