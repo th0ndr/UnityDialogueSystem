@@ -8,6 +8,6 @@ public class Sentence
 {
 	public Character character;
 	[TextArea(3, 10)]
-	public string[] text;
+	public string paragraph;
 
 }
