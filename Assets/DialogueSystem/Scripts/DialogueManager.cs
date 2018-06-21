@@ -52,29 +52,30 @@ public class DialogueManager : MonoBehaviour {
 	}
 
     // Start new dialogue, and reset all data from previous dialogues
-	public void StartDialogue(Dialogue dialogue)
-	{
-		animator.SetBool("IsOpen", true);
+    public void StartDialogue(Dialogue dialogue)
+    {
+        animator.SetBool("IsOpen", true);
 
-		voices.Clear ();
-		sprites.Clear ();
-		sentences.Clear();
+        voices.Clear();
+        sprites.Clear();
+        sentences.Clear();
 
-		foreach(Sentence sentence in dialogue.sentences)
-		{
+        foreach (Sentence sentence in dialogue.sentences)
+        {
             expression = FindExpression(sentence.expression, sentence.character);
 
-			foreach (string paragraph in sentence.text)
-			{
-				sentences.Enqueue(paragraph);
-				voices.Enqueue (sentence.character.voice);
-				sprites.Enqueue (expression.Image);
-			}
-		DisplayNextSentence();
-	}
+            foreach (string paragraph in sentence.text)
+            {
+                sentences.Enqueue(paragraph);
+                voices.Enqueue(sentence.character.voice);
+                sprites.Enqueue(expression.Image);
+            }
+            DisplayNextSentence();
+        }
+    }
 
     // Display next sentence in dialogue
-	public void DisplayNextSentence()
+	void DisplayNextSentence()
 	{
         print( sentences.Count );
 		if (sentences.Count == 0)
@@ -94,7 +95,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
     //Find Expression in characcter, by expression name
-    public Expression FindExpression(string name, Character character)
+    Expression FindExpression(string name, Character character)
     {
         foreach(Expression expression in character.expressions)
         {
@@ -116,7 +117,7 @@ public class DialogueManager : MonoBehaviour {
 
 		foreach(char letter in sentence.ToCharArray())
 		{
-			
+		
 
 			if (letter == '[') 
 			{
@@ -164,7 +165,7 @@ public class DialogueManager : MonoBehaviour {
 
 
     // Hides dialogue box
-	public void EndDialogue()
+	void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
 	}
