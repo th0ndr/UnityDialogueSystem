@@ -9,4 +9,9 @@ public class Expression
 	[Header("Expression")]
 	public string Name;
 	public Sprite Image;
+
+    public Expression(Sprite Image)
+    {
+        this.Image = Image;
+    }
 }

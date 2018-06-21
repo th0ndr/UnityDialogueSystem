@@ -62,7 +62,14 @@ public class DialogueManager : MonoBehaviour {
 
 		foreach(Sentence sentence in dialogue.sentences)
 		{
-            expression = FindExpression(sentence.expression, sentence.character);
+            if(sentence.StandardExpression){
+                expression = new Expression(sentence.character.standardExpression);
+            }
+            else
+            {
+                expression = FindExpression(sentence.expression, sentence.character);
+            }
+
 
 			foreach (string paragraph in sentence.text)
 			{
