@@ -208,7 +208,8 @@ Prefab:
       propertyPath: integerDictionary.m_values.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114731279387165590, guid: f179273886f664410813061b0d4ffe3b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f179273886f664410813061b0d4ffe3b, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &225415357 stripped
