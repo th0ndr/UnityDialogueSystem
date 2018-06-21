@@ -11,5 +11,4 @@ public class Sentence
     public string expression;
 	[TextArea(3, 10)]
 	public string[] text;
-        
 }
