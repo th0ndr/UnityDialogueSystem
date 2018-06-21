@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour {
 	public float waitTime = .01f;
 	public float voiceVolume = 1f;
 	public bool doubleTap = true;
-
+    public string nextKey = "z";
 
 	private Queue<string> sentences;
 	private Queue<Sprite> sprites;
@@ -36,7 +36,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.Z) && finished && doubleTap) 
+        if (Input.GetKeyDown (nextKey) && finished && doubleTap) 
 		{
 			
 			DisplayNextSentence ();
@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour {
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.Z) && doubleTap == false)
+        if (Input.GetKeyDown (nextKey) && doubleTap == false)
 		{
 			finished = true;
 			DisplayNextSentence ();
@@ -60,9 +60,16 @@ public class DialogueManager : MonoBehaviour {
         sprites.Clear();
         sentences.Clear();
 
-        foreach (Sentence sentence in dialogue.sentences)
-        {
-            expression = FindExpression(sentence.expression, sentence.character);
+
+		foreach(Sentence sentence in dialogue.sentences)
+		{
+            if(sentence.StandardExpression){
+                expression = new Expression(sentence.character.standardExpression);
+            }
+            else
+            {
+                expression = FindExpression(sentence.expression, sentence.character);
+            }
 
             foreach (string paragraph in sentence.text)
             {
@@ -130,7 +137,7 @@ public class DialogueManager : MonoBehaviour {
 				if (letter == ']')
 				{
 					parsing = false;
-					waitTime = float.Parse (timeString) * .001f;
+					waitTime = float.Parse (timeString);
 					timeString = "";
 				} 
 
@@ -145,7 +152,7 @@ public class DialogueManager : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetKeyDown (KeyCode.Z) && finished == false)
+                if (Input.GetKeyDown (nextKey) && finished == false)
 				{
 					dialogueText.text = ParseSentence (sentence);
 					finished = true;
