@@ -395,8 +395,7 @@ MonoBehaviour:
     Status:
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        text:
-        - I should ask Terra and Edgar if they're ready.
+        paragraph: I should ask my friends if they're ready.
       NextStatus:
       - Ask Edgar and Terra
       NewConversations: []
@@ -404,8 +403,7 @@ MonoBehaviour:
     Status:
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        text:
-        - I should wait for them
+        paragraph: I should wait for them
       NextStatus: []
       NewConversations: []
 --- !u!114 &926136344
@@ -749,21 +747,15 @@ MonoBehaviour:
     Status:
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        text:
-        - Guys, I found the entrance of the cave.
-        - It's around the corner
+        paragraph: Yes
       - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        text:
-        - '[20] Nice! [100] Let''s go Edgar'
+        paragraph: Yes
       - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        text:
-        - '[200] ..... [110] Wait ....'
+        paragraph: No
       - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        text:
-        - What's the matter?
+        paragraph: No?
       - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        text:
-        - '[200] ..... [150] I... I think... [100] I think I hurt my ankle'
+        paragraph: No!
       NextStatus: []
       NewConversations:
       - ConversationName: Thoughts

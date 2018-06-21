@@ -61,16 +61,10 @@ public class DialogueManager : MonoBehaviour {
 
 		foreach(Sentence sentence in dialogue.sentences)
 		{
-
-
-			foreach (string paragraph in sentence.text)
-			{
-				sprites.Enqueue (sentence.character.standardExpression);
-				sentences.Enqueue(paragraph);
-				voices.Enqueue (sentence.character.voice);
-			}
-
-		}
+            sprites.Enqueue( sentence.character.standardExpression );
+            sentences.Enqueue( sentence.paragraph );
+            voices.Enqueue( sentence.character.voice );
+        }
 
 		DisplayNextSentence();
 	}
