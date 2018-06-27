@@ -408,7 +408,11 @@ MonoBehaviour:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
         expression: 
-        paragraph: '[0.1]**Thinks About Her**'
+        paragraph: '[0.1]**Thinks About.....**'
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 0
+        expression: Angry
+        paragraph: HARAMBE
       NextStatus: []
       NewConversations: []
 --- !u!114 &926136344

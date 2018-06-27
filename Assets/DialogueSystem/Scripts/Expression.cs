@@ -10,8 +10,9 @@ public class Expression
 	public string Name;
 	public Sprite Image;
 
-    public Expression(Sprite Image)
+    public Expression(Sprite Image, string Name)
     {
         this.Image = Image;
+        this.Name = Name;
     }
 }

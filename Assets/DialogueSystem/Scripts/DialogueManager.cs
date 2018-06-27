@@ -63,15 +63,17 @@ public class DialogueManager : MonoBehaviour {
 
 		foreach(Sentence sentence in dialogue.sentences)
 		{
-            if(sentence.StandardExpression){
-                expression = new Expression(sentence.character.standardExpression);
+            
+            if(sentence.StandardExpression)
+            {
+                expression = new Expression(sentence.character.standardExpression, "Standard");
             }
             else
             {
                 expression = FindExpression(sentence.expression, sentence.character);
             }
 
-            sprites.Enqueue( sentence.character.standardExpression );
+            sprites.Enqueue( expression.Image );
             sentences.Enqueue( sentence.paragraph );
             voices.Enqueue( sentence.character.voice );
         }
@@ -81,7 +83,6 @@ public class DialogueManager : MonoBehaviour {
     // Display next sentence in dialogue
 	void DisplayNextSentence()
 	{
-        print( sentences.Count );
 		if (sentences.Count == 0)
 		{
 			EndDialogue();
@@ -103,7 +104,7 @@ public class DialogueManager : MonoBehaviour {
     {
         foreach(Expression expression in character.expressions)
         {
-            if(expression.Name == name)
+            if(expression.Name.Equals(name))
             {
                 return (expression);
             } 
