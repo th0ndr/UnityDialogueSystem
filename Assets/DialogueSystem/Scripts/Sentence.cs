@@ -7,8 +7,8 @@ using UnityEngine;
 public class Sentence
 {
 	public Character character;
-    public bool StandardExpression;
+    public bool StandardExpression = true;
     public string expression;
 	[TextArea(3, 10)]
-	public string[] text;
+	public string paragraph;
 }

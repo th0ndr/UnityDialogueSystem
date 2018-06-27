@@ -396,7 +396,9 @@ MonoBehaviour:
     Status:
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        paragraph: I should ask my friends if they're ready.
+        StandardExpression: 1
+        expression: 
+        paragraph: '[0.05]**Thinks about infinity**'
       NextStatus:
       - Ask Edgar and Terra
       NewConversations: []
@@ -404,7 +406,9 @@ MonoBehaviour:
     Status:
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        paragraph: I should wait for them
+        StandardExpression: 1
+        expression: 
+        paragraph: '[0.1]**Thinks About Her**'
       NextStatus: []
       NewConversations: []
 --- !u!114 &926136344
@@ -748,14 +752,24 @@ MonoBehaviour:
     Status:
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        paragraph: Yes
+        StandardExpression: 1
+        expression: 
+        paragraph: Yes?
       - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        paragraph: Yes
+        StandardExpression: 1
+        expression: 
+        paragraph: Yes!
       - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        paragraph: No
+        StandardExpression: 1
+        expression: 
+        paragraph: no...
       - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+        StandardExpression: 1
+        expression: 
         paragraph: No?
       - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+        StandardExpression: 1
+        expression: 
         paragraph: No!
       NextStatus: []
       NewConversations:

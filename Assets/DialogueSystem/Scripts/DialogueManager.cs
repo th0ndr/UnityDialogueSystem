@@ -71,14 +71,11 @@ public class DialogueManager : MonoBehaviour {
                 expression = FindExpression(sentence.expression, sentence.character);
             }
 
-            foreach (string paragraph in sentence.text)
-            {
-                sentences.Enqueue(paragraph);
-                voices.Enqueue(sentence.character.voice);
-                sprites.Enqueue(expression.Image);
-            }
-            DisplayNextSentence();
+            sprites.Enqueue( sentence.character.standardExpression );
+            sentences.Enqueue( sentence.paragraph );
+            voices.Enqueue( sentence.character.voice );
         }
+        DisplayNextSentence();
     }
 
     // Display next sentence in dialogue
