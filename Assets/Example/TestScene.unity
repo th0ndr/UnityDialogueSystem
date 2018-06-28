@@ -389,32 +389,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886a3fe3bbb08b9459acef14402996f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Thoughts
-  ActiveStatus: Ask Edgar and Terra
-  Status:
-  - Name: Ask Edgar and Terra
+  Model:
+    Name: Thoughts
+    ActiveStatus: AskStatus
     Status:
-      Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: '[0.05]**Thinks about infinity**'
-      NextStatus:
-      - Ask Edgar and Terra
-      NewConversations: []
-  - Name: Wait for Edgar and Terra
-    Status:
-      Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: '[0.1]**Thinks About.....**'
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 0
-        expression: Angry
-        paragraph: HARAMBE
-      NextStatus: []
-      NewConversations: []
+    - Name: AskStatus
+      Status:
+        NextStatus: 
+        Dialogue:
+        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          StandardExpression: 1
+          expression: 
+          paragraph: Asking
+        NewConversations: []
+    - Name: WaitStatus
+      Status:
+        NextStatus: WaitStatus
+        Dialogue:
+        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          StandardExpression: 1
+          expression: 
+          paragraph: I must.....
+        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          StandardExpression: 0
+          expression: Angry
+          paragraph: WAIT FOR THEM
+        NewConversations: []
 --- !u!114 &926136344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,38 +749,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886a3fe3bbb08b9459acef14402996f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: EdgarTerra
-  ActiveStatus: Edgar Ankle Hurt
-  Status:
-  - Name: Edgar Ankle Hurt
+  Model:
+    Name: EdgarTerra
+    ActiveStatus: AnkleStatus
     Status:
-      Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Yes?
-      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Yes!
-      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: no...
-      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: No?
-      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: No!
-      NextStatus: []
-      NewConversations:
-      - ConversationName: Thoughts
-        PendingStatus:
-          StatusName: Wait for Edgar and Terra
-          Importance: 0
+    - Name: AnkleStatus
+      Status:
+        NextStatus: 
+        Dialogue:
+        - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+          StandardExpression: 1
+          expression: 
+          paragraph: Ahhhhhhhh
+        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          StandardExpression: 1
+          expression: 
+          paragraph: Ehhhhhhhhhh
+        - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+          StandardExpression: 1
+          expression: 
+          paragraph: Ohhhhhhhhh
+        NewConversations:
+        - ConversationName: Thoughts
+          PendingStatus:
+            StatusName: WaitStatus
+            Importance: 0
 --- !u!114 &1547249287
 MonoBehaviour:
   m_ObjectHideFlags: 0

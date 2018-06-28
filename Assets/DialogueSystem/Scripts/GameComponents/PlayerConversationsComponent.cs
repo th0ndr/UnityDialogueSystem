@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Assets.DialogueSystem.Scripts.TemporalDev {
-    public class PlayerConversations : MonoBehaviour {
+    public class PlayerConversationsComponent : MonoBehaviour {
 
-        public DialogueManager DialogueManager;
+        public DialogueComponent DialogueManager;
         public List<PendingConversation> PendingConversations { get; set; }
 
         private void Start() {
@@ -47,4 +46,3 @@ namespace Assets.DialogueSystem.Scripts.TemporalDev {
         public string StatusName;
         public int Importance;
     }
-}
