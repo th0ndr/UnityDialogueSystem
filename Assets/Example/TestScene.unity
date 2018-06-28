@@ -394,27 +394,21 @@ MonoBehaviour:
     ActiveStatus: AskStatus
     Status:
     - Name: AskStatus
-      Status:
-        NextStatus: 
-        Dialogue:
-        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-          StandardExpression: 1
-          expression: 
-          paragraph: Asking
-        NewConversations: []
+      NextStatus: 
+      Dialogue:
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Asking
+      NewConversations: []
     - Name: WaitStatus
-      Status:
-        NextStatus: WaitStatus
-        Dialogue:
-        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-          StandardExpression: 1
-          expression: 
-          paragraph: I must.....
-        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-          StandardExpression: 0
-          expression: Angry
-          paragraph: WAIT FOR THEM
-        NewConversations: []
+      NextStatus: WaitStatus
+      Dialogue:
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Waiting
+      NewConversations: []
 --- !u!114 &926136344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,26 +748,25 @@ MonoBehaviour:
     ActiveStatus: AnkleStatus
     Status:
     - Name: AnkleStatus
-      Status:
-        NextStatus: 
-        Dialogue:
-        - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-          StandardExpression: 1
-          expression: 
-          paragraph: Ahhhhhhhh
-        - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-          StandardExpression: 1
-          expression: 
-          paragraph: Ehhhhhhhhhh
-        - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-          StandardExpression: 1
-          expression: 
-          paragraph: Ohhhhhhhhh
-        NewConversations:
-        - ConversationName: Thoughts
-          PendingStatus:
-            StatusName: WaitStatus
-            Importance: 0
+      NextStatus: 
+      Dialogue:
+      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Ah?
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Eh
+      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Oh!
+      NewConversations:
+      - ConversationName: Thoughts
+        PendingStatus:
+          StatusName: WaitStatus
+          Importance: 0
 --- !u!114 &1547249287
 MonoBehaviour:
   m_ObjectHideFlags: 0

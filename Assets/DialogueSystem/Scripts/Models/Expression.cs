@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-// Different expression faces for the characters
-[System.Serializable]
-public class Expression
+﻿namespace DialogueManager.Models
 {
-	[Header("Expression")]
-	public string Name;
-	public Sprite Image;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-    public Expression(Sprite Image, string Name)
+    // Different expression faces for the characters
+    [System.Serializable]
+    public class Expression
     {
-        this.Image = Image;
-        this.Name = Name;
+        [Header( "Expression" )]
+        public string Name;
+        public Sprite Image;
+
+        public Expression(Sprite Image, string Name)
+        {
+            this.Image = Image;
+            this.Name = Name;
+        }
     }
 }

@@ -1,50 +1,54 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-//TEMPORAL CLASS
-//CLASE PARA PRUEBAS
-public class PositionTrigger : MonoBehaviour
+﻿namespace DialogueManager.GameComponents.Triggers
 {
-    //NACADAS PARA PROBAR
-    public GameObject Tracked;
-    private bool wasTriggered = false;
 
-    private Transform tPosition;
-    private PlayerConversationsComponent playerConversations;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-    private void Start()
+
+    //TEMPORAL CLASS
+    //CLASE PARA PRUEBAS
+    public class PositionTrigger : MonoBehaviour
     {
-        tPosition = Tracked.GetComponent<Transform>();
-        playerConversations = Tracked.GetComponent<PlayerConversationsComponent>();
-    }
+        //NACADAS PARA PROBAR
+        public GameObject Tracked;
+        private bool wasTriggered = false;
 
-    private void Update()
-    {
-        //MAS NACADAS PARA PROBAR
-        if (tPosition.position.x < this.transform.position.x &&
-            tPosition.position.y > this.transform.position.y)
+        private Transform tPosition;
+        private PlayerConversationsComponent playerConversations;
+
+        private void Start()
         {
+            tPosition = Tracked.GetComponent<Transform>();
+            playerConversations = Tracked.GetComponent<PlayerConversationsComponent>();
+        }
 
-            if (!wasTriggered)
+        private void Update()
+        {
+            //MAS NACADAS PARA PROBAR
+            if (tPosition.position.x < this.transform.position.x &&
+                tPosition.position.y > this.transform.position.y)
             {
-                wasTriggered = true;
 
-                ConversationComponent conversation = this.GetComponent<ConversationComponent>();
-                if (conversation != null)
+                if (!wasTriggered)
                 {
-                    conversation.Trigger( playerConversations );
+                    wasTriggered = true;
+
+                    ConversationComponent conversation = this.GetComponent<ConversationComponent>();
+                    if (conversation != null)
+                    {
+                        conversation.Trigger( playerConversations );
+                    }
                 }
+
+
             }
-
-
+            else if (wasTriggered)
+            {
+                wasTriggered = false;
+            }
         }
-        else if (wasTriggered)
-        {
-            wasTriggered = false;
-        }
+
     }
-
 }
