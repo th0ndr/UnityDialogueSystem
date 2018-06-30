@@ -1,22 +1,20 @@
-﻿namespace DialogueManager.GameComponents
+﻿namespace DialogueManager.Controllers
 {
+    using DialogueManager.GameComponents;
+    using DialogueManager.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using UnityEngine;
-    using DialogueManager.Controllers;
-    using DialogueManager.Models;
 
-    public class PlayerConversationsComponent : MonoBehaviour
+    public class GameConversationsController
     {
+        public GameConversations Model;
 
-        public DialogueComponent DialogueManager;
-        public List<PendingConversation> PendingConversations { get; set; }
-
-        private void Start()
+        public GameConversationsController(GameConversations gameConversations)
         {
-            PendingConversations = new List<PendingConversation>();
+            gameConversations.PendingConversations = new List<PendingConversation>();
+            this.Model = gameConversations;
         }
 
         public void AddConversations(List<NewConversation> newConversations)
@@ -27,7 +25,7 @@
 
             foreach (NewConversation conversation in newConversations)
             {
-                PendingConversations.Add( new PendingConversation
+                this.Model.PendingConversations.Add( new PendingConversation
                 {
 
                     ConversationName = conversation.ConversationName,
@@ -41,6 +39,5 @@
 
 
         }
-
     }
 }

@@ -6,7 +6,7 @@
     using DialogueManager.GameComponents;
 
     [CustomEditor( typeof( ConversationComponent ) )]
-    public class LevelScriptEditor : Editor
+    public class ConversationEditor : Editor
     {
         private SerializedProperty nameProperty;
         private SerializedProperty activeStatusProperty;

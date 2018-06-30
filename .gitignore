@@ -40,3 +40,4 @@ Packages/manifest\.json
 \.DS_Store
 
 ProjectSettings/ProjectVersion\.txt
+*.Cache

@@ -6,14 +6,13 @@
     using System.Linq;
     using UnityEditor;
     using UnityEngine;
-
-    // Dialogue class, with a variable that triggers it
-
+    
+    /// <summary>
+    /// Dialogue class, with a variable that triggers it
+    /// </summary>
     [System.Serializable]
     public class Dialogue
     {
-
         public Sentence[] sentences;
-
     }
 }

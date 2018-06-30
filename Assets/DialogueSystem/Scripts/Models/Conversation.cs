@@ -7,11 +7,9 @@
     [System.Serializable]
     public class Conversation
     {
-
         public string Name;
         public string ActiveStatus;
         public List<ConversationStatus> Status;
-
     }
 
     [System.Serializable]

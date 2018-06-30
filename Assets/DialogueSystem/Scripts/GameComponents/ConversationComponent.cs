@@ -9,67 +9,18 @@
     
     public class ConversationComponent : MonoBehaviour
     {
-        public Conversation Model = new Conversation();
+        public Conversation Model;
+        private ConversationController Controller;
 
-        private PlayerConversationsComponent playerConversations;
-
-        public void Trigger(PlayerConversationsComponent playerConversations)
+        private void Awake()
         {
-            this.playerConversations = playerConversations;
-            //ESTARIA BIEN HACER UN DICCIONARIO PARA EVITAR HACER EL FOREACH
-            foreach (PendingConversation pending in playerConversations.PendingConversations)
-            {
-                if (pending.ConversationName.Equals( this.Model.Name ))
-                {
-
-                    //POR AHORA SOLO PUEDE AGARRA UN STATUS
-                    this.Model.ActiveStatus = pending.PendingStatus[0].StatusName;
-                    playerConversations.PendingConversations.Remove( pending );
-                    //FALTA CAMBIAR METODO PARA VARIOS POSIBLES STATUS CON PRIORIDAD
-
-                    break;
-                }
-            }
-
-            if (this.Model.ActiveStatus != null)
-            {
-
-                //ESTARIA BIEN HACER UN DICCIONARIO PARA EVITAR HACER EL FOREACH
-                foreach (ConversationStatus status in this.Model.Status)
-                {
-
-                    if (status.Name.Equals( this.Model.ActiveStatus ))
-                    {
-                        this.Model.ActiveStatus = this.TriggerStatus( status );
-
-                        break;
-                    }
-                }
-
-            }
-
+            this.Controller = new ConversationController( Model );
         }
-
-        public string TriggerStatus(ConversationStatus status)
+        public void Trigger(GameConversationsComponent gameConversationsComponent)
         {
-
-
-            //DENTRO DE PLAYERCONVERSATIONS SE DEBE HACER LA LOGICA PARA QUE NO SE REPITAN
-            this.playerConversations.AddConversations( status.NewConversations );
-
-
-
-            //ACTIVAR DIALOGUE
-            // EL OBJETO SEA UN Dialogue en vez de un Sentence, quitar variables que no se usan a Dialogue
-
-            Dialogue dialogue = new Dialogue
-            {
-                sentences = status.Dialogue,
-            };
-            playerConversations.DialogueManager.StartDialogue( dialogue );
-
-            return status.NextStatus;
+            DialogueManagerComponent dialogueManager = GameObject.Find( "DialogueManager" )
+                .GetComponent<DialogueManagerComponent>();
+            Controller.Trigger( gameConversationsComponent, dialogueManager );
         }
-
     }
 }

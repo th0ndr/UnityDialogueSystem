@@ -5,11 +5,8 @@
     using System.Linq;
     using System.Text;
 
-
-
     [System.Serializable]
     public class ConversationStatus
-
     {
         public string Name;
         public string NextStatus;

@@ -3,8 +3,10 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
-
-    // Different expression faces for the characters
+    
+    /// <summary>
+    /// Different expression faces for the characters
+    /// </summary>
     [System.Serializable]
     public class Expression
     {

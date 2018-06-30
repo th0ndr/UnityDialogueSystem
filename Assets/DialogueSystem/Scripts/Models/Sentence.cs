@@ -3,8 +3,10 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
-
-    // Each dialogue has several sentences, and each sentence has text, and character
+    
+    /// <summary>
+    /// Each dialogue has several sentences, and each sentence has text, and character
+    /// </summary>
     [System.Serializable]
     public class Sentence
     {

@@ -1,64 +1,35 @@
-﻿namespace DialogueManager.GameComponents
-{
+﻿namespace DialogueManager.Controllers { 
+    using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using DialogueManager.Models;
     using UnityEngine;
     using UnityEngine.UI;
-    using DialogueManager.Controllers;
-    using DialogueManager.Models;
-    // This class manages the text in the dialogues, the transition between sentences, animations, and such
-    public class DialogueComponent : MonoBehaviour
+    public class DialogueManagerController
     {
-
-        public Text dialogueText;
-        public Image imageText;
-        public Animator animator;
-        public float waitTime = .01f;
-        public float voiceVolume = 1f;
-        public bool doubleTap = true;
-        public string nextKey = "z";
-
         private Queue<string> sentences;
         private Queue<Sprite> sprites;
         private Queue<AudioClip> voices;
-        private AudioSource source;
         private AudioClip audioQueue;
-        private bool parsing, finished;
+        private bool parsing;
         private string timeString, sentence;
         private Expression expression;
 
-
-
-        void Start()
+        public DialogueManager Model;
+        public DialogueManagerController(DialogueManager Model)
         {
+            this.Model = Model;
             sentences = new Queue<string>();
             sprites = new Queue<Sprite>();
             voices = new Queue<AudioClip>();
-            imageText = imageText.GetComponent<Image>();
-            source = GetComponent<AudioSource>();
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown( nextKey ) && finished && doubleTap)
-            {
-
-                DisplayNextSentence();
-                finished = false;
-
-            }
-
-            if (Input.GetKeyDown( nextKey ) && doubleTap == false)
-            {
-                finished = true;
-                DisplayNextSentence();
-            }
         }
 
         // Start new dialogue, and reset all data from previous dialogues
         public void StartDialogue(Dialogue dialogue)
         {
-            animator.SetBool( "IsOpen", true );
+            this.Model.Animator.SetBool( "IsOpen", true );
 
             voices.Clear();
             sprites.Clear();
@@ -67,7 +38,6 @@
 
             foreach (Sentence sentence in dialogue.sentences)
             {
-
                 if (sentence.StandardExpression)
                 {
                     expression = new Expression( sentence.character.standardExpression, "Standard" );
@@ -81,30 +51,28 @@
                 sentences.Enqueue( sentence.paragraph );
                 voices.Enqueue( sentence.character.voice );
             }
-            DisplayNextSentence();
         }
 
         // Display next sentence in dialogue
-        void DisplayNextSentence()
+        public bool DisplayNextSentence()
         {
             if (sentences.Count == 0)
             {
                 EndDialogue();
-                StopAllCoroutines();
-                return;
+                return false;
             }
 
-            imageText.sprite = sprites.Dequeue();
+            this.Model.ImageText.sprite = sprites.Dequeue();
             sentence = sentences.Dequeue();
             audioQueue = voices.Dequeue();
 
-            StopAllCoroutines();
-            waitTime = 0f;
-            StartCoroutine( TypeSentence( sentence, audioQueue ) );
+            this.Model.WaitTime = 0f;
+            return true;
         }
 
+
         //Find Expression in characcter, by expression name
-        Expression FindExpression(string name, Character character)
+        public Expression FindExpression(string name, Character character)
         {
             foreach (Expression expression in character.expressions)
             {
@@ -118,16 +86,14 @@
 
         }
         // Type sentence letter by letter, and parse the dialogue speed
-        IEnumerator TypeSentence(string sentence, AudioClip audioQueue)
+        public IEnumerator TypeSentence()
         {
             timeString = "";
             parsing = false;
-            dialogueText.text = "";
+            this.Model.DialogueText.text = "";
 
             foreach (char letter in sentence.ToCharArray())
             {
-
-
                 if (letter == '[')
                 {
                     parsing = true;
@@ -135,48 +101,42 @@
 
                 if (parsing)
                 {
-
                     if (letter == ']')
                     {
                         parsing = false;
-                        waitTime = float.Parse( timeString );
+                        this.Model.WaitTime = float.Parse( timeString );
                         timeString = "";
                     }
 
                     if (letter != '[' && letter != ']')
                     {
                         timeString += letter;
-
                     }
-
-
-
                 }
                 else
                 {
-                    if (Input.GetKeyDown( nextKey ) && finished == false)
+                    if (Input.GetKeyDown( this.Model.NextKey ) && this.Model.finished == false)
                     {
-                        dialogueText.text = ParseSentence( sentence );
-                        finished = true;
+                        this.Model.DialogueText.text = ParseSentence( sentence );
+                        this.Model.finished = true;
                         yield break;
                     }
                     else
                     {
-                        dialogueText.text += letter;
-                        source.PlayOneShot( audioQueue, voiceVolume );
-                        yield return new WaitForSeconds( waitTime );
+                        this.Model.DialogueText.text += letter;
+                        this.Model.source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
+                        yield return new WaitForSeconds( this.Model.WaitTime );
                     }
                 }
-
             }
-            finished = true;
+            this.Model.finished = true;
         }
 
 
         // Hides dialogue box
-        void EndDialogue()
+        public void EndDialogue()
         {
-            animator.SetBool( "IsOpen", false );
+            this.Model.Animator.SetBool( "IsOpen", false );
         }
 
         // Parses the sentence

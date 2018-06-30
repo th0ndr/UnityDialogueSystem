@@ -208,16 +208,25 @@ Prefab:
       propertyPath: integerDictionary.m_values.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
+        type: 2}
+      propertyPath: Model.dialogueText
+      value: 
+      objectReference: {fileID: 1647582365}
+    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
+        type: 2}
+      propertyPath: Model.imageText
+      value: 
+      objectReference: {fileID: 1647582364}
+    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
+        type: 2}
+      propertyPath: Model.animator
+      value: 
+      objectReference: {fileID: 1647582366}
     m_RemovedComponents:
     - {fileID: 114731279387165590, guid: f179273886f664410813061b0d4ffe3b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f179273886f664410813061b0d4ffe3b, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &225415357 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-    type: 2}
-  m_PrefabInternal: {fileID: 225415356}
-  m_Script: {fileID: 11500000, guid: 9285c391d23a34ad5bda2483061004e9, type: 3}
 --- !u!1 &449070051
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +1002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1895e2790c8256439e08173081fdecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogueManager: {fileID: 225415357}
 --- !u!61 &1985167939
 BoxCollider2D:
   m_ObjectHideFlags: 0

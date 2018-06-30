@@ -16,12 +16,12 @@
         private bool wasTriggered = false;
 
         private Transform tPosition;
-        private PlayerConversationsComponent playerConversations;
+        private GameConversationsComponent playerConversations;
 
         private void Start()
         {
             tPosition = Tracked.GetComponent<Transform>();
-            playerConversations = Tracked.GetComponent<PlayerConversationsComponent>();
+            playerConversations = Tracked.GetComponent<GameConversationsComponent>();
         }
 
         private void Update()
