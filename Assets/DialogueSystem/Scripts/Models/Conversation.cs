@@ -4,14 +4,29 @@
     using System.Collections.Generic;
     using UnityEngine;
 
+    /// <summary>
+    /// The Conversation Class contains all the posible Dialogues the NPC or situation can have.
+    /// </summary>
     [System.Serializable]
     public class Conversation
     {
+        /// <summary>
+        /// Name of the conversation.
+        /// </summary>
         public string Name;
+
+        /// <summary>
+        /// Status of the conversation if a Dialogue was Triggered.
+        /// </summary>
         public string ActiveStatus;
+
+        /// <summary>
+        /// List containing all the possible Status each with it's Dialogues.
+        /// </summary>
         public List<ConversationStatus> Status;
     }
 
+    // QUIERO CAMBIAR COMO FUNCIONAN PENDINGCONVERSATION Y PENDINGSTATUS
     [System.Serializable]
     public struct PendingConversation
     {

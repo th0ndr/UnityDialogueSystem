@@ -6,7 +6,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-
+    // CLASE FEA
     //TEMPORAL CLASS
     //CLASE PARA PRUEBAS
     public class PositionTrigger : MonoBehaviour

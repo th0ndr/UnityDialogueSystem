@@ -6,7 +6,10 @@
     using UnityEngine.UI;
     using DialogueManager.Controllers;
     using DialogueManager.Models;
-    // This class manages the text in the dialogues, the transition between sentences, animations, and such
+
+    /// <summary>
+    /// This class manages the text in the dialogues, the transition between sentences, animations, and such
+    /// </summary>
     public class DialogueManagerComponent : MonoBehaviour
     {
         public DialogueManager Model;
@@ -33,13 +36,19 @@
             }
         }
 
+        /// <summary>
+        /// Start new dialogue, and reset all data from previous dialogues
+        /// </summary>
+        /// <param name="dialogue">Dialogue that will be displayed</param>
         public void StartDialogue(Dialogue dialogue)
         {
             Controller.StartDialogue( dialogue );
             DisplayNextSentence();
         }
 
-        // Display next sentence in dialogue
+        /// <summary>
+        /// Display next sentence in dialogue
+        /// </summary>
         private void DisplayNextSentence()
         {
             StopAllCoroutines();

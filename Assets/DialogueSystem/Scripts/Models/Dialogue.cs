@@ -8,11 +8,14 @@
     using UnityEngine;
     
     /// <summary>
-    /// Dialogue class, with a variable that triggers it
+    /// Dialogue class, with all the sentences that will be displayed in the Status
     /// </summary>
     [System.Serializable]
     public class Dialogue
     {
+        /// <summary>
+        /// A List in which each sentence contains a game dialogue line.
+        /// </summary>
         public Sentence[] sentences;
     }
 }

@@ -10,9 +10,22 @@
     [System.Serializable]
     public class Sentence
     {
+        /// <summary>
+        /// Character that will be talking
+        /// </summary>
         public Character character;
+
+        // IGUAL Y PODEMOS QUITAR ESTA
         public bool StandardExpression = true;
+
+        /// <summary>
+        /// Expression of the Character when talking
+        /// </summary>
         public string expression;
+
+        /// <summary>
+        /// The text that will be displayed.
+        /// </summary>
         [TextArea( 3, 10 )]
         public string paragraph;
     }

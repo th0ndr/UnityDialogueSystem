@@ -26,15 +26,16 @@
             voices = new Queue<AudioClip>();
         }
 
-        // Start new dialogue, and reset all data from previous dialogues
+        /// <summary>
+        /// Start new dialogue, and reset all data from previous dialogues
+        /// </summary>
+        /// <param name="dialogue">Dialogue that will be displayed</param>
         public void StartDialogue(Dialogue dialogue)
         {
             this.Model.Animator.SetBool( "IsOpen", true );
-
             voices.Clear();
             sprites.Clear();
             sentences.Clear();
-
 
             foreach (Sentence sentence in dialogue.sentences)
             {
@@ -52,8 +53,11 @@
                 voices.Enqueue( sentence.character.voice );
             }
         }
-
-        // Display next sentence in dialogue
+        
+        /// <summary>
+        /// Display next sentence in dialogue
+        /// </summary>
+        /// <returns>If there was a Sentence to be displayed or not</returns>
         public bool DisplayNextSentence()
         {
             if (sentences.Count == 0)
@@ -65,14 +69,18 @@
             this.Model.ImageText.sprite = sprites.Dequeue();
             sentence = sentences.Dequeue();
             audioQueue = voices.Dequeue();
-
             this.Model.WaitTime = 0f;
             return true;
         }
 
-
-        //Find Expression in characcter, by expression name
-        public Expression FindExpression(string name, Character character)
+        
+        /// <summary>
+        /// Find Expression in characcter, by expression name.
+        /// </summary>
+        /// <param name="name">Name of the Expression.</param>
+        /// <param name="character">Character in which the Expression will be found.</param>
+        /// <returns>Expression that was being looked for, returns null if there wasn't any.</returns>
+        private Expression FindExpression(string name, Character character)
         {
             foreach (Expression expression in character.expressions)
             {
@@ -83,9 +91,12 @@
             }
 
             return null;
-
         }
-        // Type sentence letter by letter, and parse the dialogue speed
+
+        /// <summary>
+        /// Method that will be typing and displaying the sentence and checking for [time] indicators
+        /// </summary>
+        /// <returns>Necessary for the WaitForSeconds function</returns>
         public IEnumerator TypeSentence()
         {
             timeString = "";
@@ -131,16 +142,21 @@
             }
             this.Model.finished = true;
         }
-
-
-        // Hides dialogue box
+        
+        /// <summary>
+        /// Hides dialogue box
+        /// </summary>
         public void EndDialogue()
         {
             this.Model.Animator.SetBool( "IsOpen", false );
         }
-
-        // Parses the sentence
-        string ParseSentence(string sentence)
+        
+        /// <summary>
+        /// Parses the sentence, for fully displaying it.
+        /// </summary>
+        /// <param name="sentence">Sentence to be parsed.</param>
+        /// <returns>Returns the complete sentence witout the [time] labels</returns>
+        private string ParseSentence(string sentence)
         {
             string parsedSentence = "";
             bool normalSentence = true;
@@ -155,15 +171,14 @@
                 {
                     normalSentence = true;
                 }
+
                 if (normalSentence)
                 {
                     if (letter != ']')
                     {
                         parsedSentence += letter;
                     }
-
                 }
-
             }
 
             return parsedSentence;
