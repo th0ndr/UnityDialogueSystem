@@ -24,6 +24,11 @@
         /// List containing all the possible Status each with it's Dialogues.
         /// </summary>
         public List<ConversationStatus> Status;
+
+        /// <summary>
+        /// Pending Status of Game Conversations
+        /// </summary>
+        public GameConversations GameConversations { get; set; }
     }
 
     // QUIERO CAMBIAR COMO FUNCIONAN PENDINGCONVERSATION Y PENDINGSTATUS

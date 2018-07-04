@@ -15,5 +15,9 @@
         /// List of all the Pending Conversations in case they are Triggered.
         /// </summary>
         public List<PendingConversation> PendingConversations { get; set; }
+        /// <summary>
+        /// List of conversations that haven't been added to PendingConversations
+        /// </summary>
+        public List<NewConversation> ConversationsToAdd { get; set; }
     }
 }

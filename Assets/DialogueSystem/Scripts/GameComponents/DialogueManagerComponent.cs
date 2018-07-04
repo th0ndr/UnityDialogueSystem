@@ -23,16 +23,20 @@
 
         void Update()
         {
+            if(Model.DialogueToShow != null)
+            {
+                this.StartDialogue();
+            }
             if (Input.GetKeyDown( Model.NextKey ) && Model.finished && Model.DoubleTap)
             {
-                DisplayNextSentence();
+                this.DisplayNextSentence();
                 Model.finished = false;
             }
 
             if (Input.GetKeyDown( Model.NextKey ) && Model.DoubleTap == false)
             {
                 Model.finished = true;
-                DisplayNextSentence();
+                this.DisplayNextSentence();
             }
         }
 
@@ -40,10 +44,10 @@
         /// Start new dialogue, and reset all data from previous dialogues
         /// </summary>
         /// <param name="dialogue">Dialogue that will be displayed</param>
-        public void StartDialogue(Dialogue dialogue)
+        public void StartDialogue()
         {
-            Controller.StartDialogue( dialogue );
-            DisplayNextSentence();
+            Controller.StartDialogue();
+            this.DisplayNextSentence();
         }
 
         /// <summary>

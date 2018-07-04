@@ -16,7 +16,10 @@
         public GameConversations Model;
         private GameConversationsController Controller;
 
-        private void Start()
+        /// <summary>
+        /// Creation of Controller and Model
+        /// </summary>
+        private void Awake()
         {
             if (this.Model == null)
             {
@@ -26,12 +29,24 @@
         }
 
         /// <summary>
+        /// Is called once per frame.
+        /// </summary>
+        private void Update()
+        {
+            
+            if(this.Model.ConversationsToAdd.Count > 0)
+            {
+                AddConversation();
+            }
+        }
+
+        /// <summary>
         /// Adds Pending Conversations to the List
         /// </summary>
         /// <param name="newConversations">List of the new Pending Conversations to be added</param>
-        public void AddConversations(List<NewConversation> newConversations)
+        public void AddConversation()
         {
-            this.Controller.AddConversations( newConversations );
+            this.Controller.AddConversation();
         }
     }
 }

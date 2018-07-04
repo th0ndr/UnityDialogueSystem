@@ -30,8 +30,10 @@
         /// Start new dialogue, and reset all data from previous dialogues
         /// </summary>
         /// <param name="dialogue">Dialogue that will be displayed</param>
-        public void StartDialogue(Dialogue dialogue)
+        public void StartDialogue()
         {
+            Dialogue dialogue = this.Model.DialogueToShow;
+            this.Model.DialogueToShow = null;
             this.Model.Animator.SetBool( "IsOpen", true );
             voices.Clear();
             sprites.Clear();

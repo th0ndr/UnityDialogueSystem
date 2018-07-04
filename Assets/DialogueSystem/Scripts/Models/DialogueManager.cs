@@ -47,5 +47,6 @@
 
         public AudioSource source { get; set; }
         public bool finished { get; set; }
+        public Dialogue DialogueToShow { get; set; }
     }
 }

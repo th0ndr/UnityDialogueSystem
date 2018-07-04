@@ -14,24 +14,23 @@
         public GameConversationsController(GameConversations gameConversations)
         {
             gameConversations.PendingConversations = new List<PendingConversation>();
+            gameConversations.ConversationsToAdd = new List<NewConversation>();
             this.Model = gameConversations;
         }
         
-        public void AddConversations(List<NewConversation> newConversations)
+        public void AddConversation()
         {
             // CHECAR SI YA EXISTEN FALTA
             // ESTA CLASE VA A CAMBIAR BASTANTE
-
-            foreach (NewConversation conversation in newConversations)
+            NewConversation conversation = this.Model.ConversationsToAdd[0];
+            this.Model.ConversationsToAdd.RemoveAt( 0 );
+            this.Model.PendingConversations.Add( new PendingConversation
             {
-                this.Model.PendingConversations.Add( new PendingConversation
-                {
-                    ConversationName = conversation.ConversationName,
-                    PendingStatus = new List<PendingStatus> {
+                ConversationName = conversation.ConversationName,
+                PendingStatus = new List<PendingStatus> {
                         conversation.PendingStatus,
                     }
-                } );
-            }
+            } );
         }
     }
 }

@@ -15,16 +15,16 @@
             this.Model = conversation;
         }
         
-        public void Trigger(GameConversationsComponent gameConversations, DialogueManagerComponent dialogueManager)
+        public void Trigger(DialogueManager dialogueManager)
         {
             // ESTARIA BIEN HACER UN DICCIONARIO PARA EVITAR HACER EL FOREACH
-            foreach (PendingConversation pending in gameConversations.Model.PendingConversations)
+            foreach (PendingConversation pending in this.Model.GameConversations.PendingConversations)
             {
                 if (pending.ConversationName.Equals( this.Model.Name ))
                 {
                     // POR AHORA SOLO PUEDE AGARRA UN STATUS
                     this.Model.ActiveStatus = pending.PendingStatus[0].StatusName;
-                    gameConversations.Model.PendingConversations.Remove( pending );
+                    this.Model.GameConversations.PendingConversations.Remove( pending );
                     // FALTA CAMBIAR METODO PARA VARIOS POSIBLES STATUS CON PRIORIDAD
 
                     break;
@@ -38,17 +38,17 @@
                 {
                     if (status.Name.Equals( this.Model.ActiveStatus ))
                     {
-                        this.Model.ActiveStatus = this.TriggerStatus( status, gameConversations, dialogueManager );
+                        this.Model.ActiveStatus = this.TriggerStatus( status, dialogueManager );
                         break;
                     }
                 }
             }
         }
 
-        public string TriggerStatus(ConversationStatus status, GameConversationsComponent gameConversations, DialogueManagerComponent dialogueManager)
+        public string TriggerStatus(ConversationStatus status, DialogueManager dialogueManager)
         {
             // DENTRO DE PLAYERCONVERSATIONS SE DEBE HACER LA LOGICA PARA QUE NO SE REPITAN
-            gameConversations.AddConversations( status.NewConversations );
+            this.Model.GameConversations.ConversationsToAdd.AddRange( status.NewConversations );
             
             // ACTIVAR DIALOGUE
             // EL OBJETO SEA UN Dialogue en vez de un Sentence, quitar variables que no se usan a Dialogue
@@ -57,8 +57,8 @@
             {
                 sentences = status.Dialogue,
             };
-            dialogueManager.StartDialogue( dialogue );
 
+            dialogueManager.DialogueToShow = dialogue;
             return status.NextStatus;
         }
     }

@@ -16,12 +16,10 @@
         private bool wasTriggered = false;
 
         private Transform tPosition;
-        private GameConversationsComponent gameConversations;
 
         private void Start()
         {
             tPosition = Tracked.GetComponent<Transform>();
-            gameConversations = Tracked.GetComponent<GameConversationsComponent>();
         }
 
         private void Update()
@@ -38,11 +36,9 @@
                     ConversationComponent conversation = this.GetComponent<ConversationComponent>();
                     if (conversation != null)
                     {
-                        conversation.Trigger( gameConversations );
+                        conversation.Trigger( );
                     }
                 }
-
-
             }
             else if (wasTriggered)
             {
