@@ -18,6 +18,6 @@
         /// <summary>
         /// List of conversations that haven't been added to PendingConversations
         /// </summary>
-        public List<NewConversation> ConversationsToAdd { get; set; }
+        public List<PendingStatus> ConversationsToAdd { get; set; }
     }
 }

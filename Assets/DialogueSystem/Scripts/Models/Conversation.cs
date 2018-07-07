@@ -18,8 +18,8 @@
         /// <summary>
         /// Status of the conversation if a Dialogue was Triggered.
         /// </summary>
-        public string ActiveStatus;
-
+        public ConversationStatus ActiveStatus;
+        public int ActiveStatusIndex;
         /// <summary>
         /// List containing all the possible Status each with it's Dialogues.
         /// </summary>
@@ -40,8 +40,9 @@
     }
 
     [System.Serializable]
-    public struct PendingStatus
+    public class PendingStatus
     {
+        public string ConversationName;
         public string StatusName;
         public int Importance;
     }

@@ -16,6 +16,6 @@
         /// <summary>
         /// A List in which each sentence contains a game dialogue line.
         /// </summary>
-        public Sentence[] sentences;
+        public List<Sentence> sentences;
     }
 }

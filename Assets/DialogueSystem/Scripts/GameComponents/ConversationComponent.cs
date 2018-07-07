@@ -17,6 +17,8 @@
 
         private void Awake()
         {
+            print(Model.ActiveStatusIndex);
+            Model.ActiveStatus = Model.Status[Model.ActiveStatusIndex];
             this.Controller = new ConversationController( Model );
         }
 

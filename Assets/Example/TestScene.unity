@@ -392,8 +392,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 926136342}
-  - component: {fileID: 926136343}
   - component: {fileID: 926136344}
+  - component: {fileID: 926136343}
   m_Layer: 0
   m_Name: Thoughts_Conversation
   m_TagString: Untagged
@@ -427,31 +427,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model:
     Name: Thoughts
-    ActiveStatus: AskStatus
+    ActiveStatus:
+      Name: Prueba
+      NextStatusIndex: 1
+      Dialogue:
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: Standard
+        paragraph: Hola
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: 'Que tal
+
+          :D'
+      NewConversations: []
+    ActiveStatusIndex: 0
     Status:
-    - Name: AskStatus
-      NextStatus: 
+    - Name: Prueba
+      NextStatusIndex: 1
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
+        expression: Standard
+        paragraph: Hola
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
         expression: 
-        paragraph: Asking
+        paragraph: 'Que tal
+
+          :D'
       NewConversations: []
-    - Name: WaitStatus
-      NextStatus: WaitStatus
-      Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Waiting
+    - Name: Nada
+      NextStatusIndex: 1
+      Dialogue: []
       NewConversations: []
-    - Name: OtroStatus
-      NextStatus: WaitStatus
+    - Name: Desbloqueada
+      NextStatusIndex: 1
       Dialogue:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
         expression: 
-        paragraph: Waiting
+        paragraph: SECRETS
       NewConversations: []
 --- !u!114 &926136344
 MonoBehaviour:
@@ -754,8 +771,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1547249285}
-  - component: {fileID: 1547249286}
   - component: {fileID: 1547249287}
+  - component: {fileID: 1547249286}
   m_Layer: 0
   m_Name: EdgarTerra_Conversation
   m_TagString: Untagged
@@ -789,28 +806,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model:
     Name: EdgarTerra
-    ActiveStatus: AnkleStatus
-    Status:
-    - Name: AnkleStatus
-      NextStatus: 
-      Dialogue:
-      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Ah?
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Eh
-      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Oh!
+    ActiveStatus:
+      Name: Test1
+      NextStatusIndex: 0
+      Dialogue: []
       NewConversations:
       - ConversationName: Thoughts
-        PendingStatus:
-          StatusName: WaitStatus
-          Importance: 0
+        StatusName: Desbloqueada
+        Importance: 0
+    ActiveStatusIndex: 0
+    Status:
+    - Name: Test1
+      NextStatusIndex: 0
+      Dialogue: []
+      NewConversations:
+      - ConversationName: Thoughts
+        StatusName: Desbloqueada
+        Importance: 0
 --- !u!114 &1547249287
 MonoBehaviour:
   m_ObjectHideFlags: 0

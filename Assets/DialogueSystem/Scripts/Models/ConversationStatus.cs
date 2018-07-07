@@ -19,24 +19,22 @@
         /// <summary>
         /// Name of the Status which the Conversation will be once the Dialogue of the current Status ends.
         /// </summary>
-        public string NextStatus;
+        public ConversationStatus NextStatus { get; set; }
+        public int NextStatusIndex;
 
         /// <summary>
         /// The complete Dialogue which will be displayed.
         /// </summary>
-        public Sentence[] Dialogue;
+        public List<Sentence> Dialogue;
 
         /// <summary>
         /// The List of the unlocked Status in other Conversations.
         /// </summary>
-        public List<NewConversation> NewConversations;
-    }
+        public List<PendingStatus> NewConversations;
 
-    // QUISIERA QUITAR ESTO
-    [Serializable]
-    public struct NewConversation
-    {
-        public string ConversationName;
-        public PendingStatus PendingStatus;
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
