@@ -13,20 +13,24 @@
     [Serializable]
     public class DialogueManager
     {
+        public GameObject CanvasObjectsPrefab;
+        public GameObject GameConversationsPrefab;
+        //public GameConversations GameConversations;
+
         /// <summary>
         /// Text that is being displayed on the Scene.
         /// </summary>
-        public Text DialogueText;
+        public Text DialogueText { get; set; }
 
         /// <summary>
         /// Image that is being displayed on the Scene.
         /// </summary>
-        public Image ImageText;
+        public Image ImageText { get; set; }
 
         /// <summary>
         /// Animation that causes the Dialogue box to go up or down.
         /// </summary>
-        public Animator Animator;
+        public Animator Animator { get; set; }
 
         /// <summary>
         /// Time between each letter.

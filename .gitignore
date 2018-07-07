@@ -41,3 +41,4 @@ Packages/manifest\.json
 
 ProjectSettings/ProjectVersion\.txt
 *.Cache
+*.StyleCop

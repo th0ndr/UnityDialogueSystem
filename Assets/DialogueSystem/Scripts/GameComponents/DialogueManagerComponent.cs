@@ -14,14 +14,29 @@
     {
         public DialogueManager Model;
         private DialogueManagerController Controller;
-        void Start()
+
+        /// <summary>
+        /// Is excecuted when the object is instantiated
+        /// </summary>
+        private void Awake()
         {
-            Model.ImageText = Model.ImageText.GetComponent<Image>();
-            Model.source = GetComponent<AudioSource>();
+            GameObject gameConversations = Instantiate(Model.GameConversationsPrefab);
+            gameConversations.name = "GameConversations";
+            GameObject canvasObjects = Instantiate( Model.CanvasObjectsPrefab );
+            canvasObjects.name = "DialogueCanvas";
+            
+            Model.DialogueText = GameObject.Find("/DialogueCanvas/DialogueBox/DialogueText").GetComponent<Text>();
+            Model.ImageText = GameObject.Find("/DialogueCanvas/DialogueBox/Image").GetComponent<Image>();
+            Model.Animator = GameObject.Find("/DialogueCanvas/DialogueBox").GetComponent<Animator>();
+            Model.source = this.GetComponent<AudioSource>();
+
             Controller = new DialogueManagerController( this.Model );
         }
 
-        void Update()
+        /// <summary>
+        /// Checks if there is something in the model to display and if there was an input
+        /// </summary>
+        private void Update()
         {
             if(Model.DialogueToShow != null)
             {

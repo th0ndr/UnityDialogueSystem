@@ -17,10 +17,6 @@
 
         private void Awake()
         {
-            this.Model.GameConversations = GameObject
-                .Find( "GameConversations" )
-                .GetComponent<GameConversationsComponent>()
-                .Model;
             this.Controller = new ConversationController( Model );
         }
 
@@ -30,6 +26,10 @@
         /// <param name="gameConversationsComponent"></param>
         public void Trigger()
         {
+            this.Model.GameConversations = GameObject
+                .Find("GameConversations")
+                .GetComponent<GameConversationsComponent>()
+                .Model;
             DialogueManager dialogueManager = GameObject
                 .Find( "DialogueManager" )
                 .GetComponent<DialogueManagerComponent>()
