@@ -8,9 +8,6 @@
     [CustomEditor( typeof( DialogueManagerComponent ) )]
     public class DialogueManagerEditor : Editor
     {
-        //private SerializedProperty dialogueTextProperty;
-        //private SerializedProperty imageTextProperty;
-        //private SerializedProperty animatorProperty;
         private SerializedProperty gameConversationsProperty;
         private SerializedProperty canvasObjectsProperty;
         private SerializedProperty waitTimeProperty;
@@ -19,9 +16,6 @@
         private SerializedProperty nextKeyProperty;
         void OnEnable()
         {
-            //dialogueTextProperty = serializedObject.FindProperty( "Model.DialogueText" );
-            //imageTextProperty = serializedObject.FindProperty( "Model.ImageText" );
-            //animatorProperty = serializedObject.FindProperty( "Model.Animator" );
             gameConversationsProperty = serializedObject.FindProperty("Model.GameConversationsPrefab");
             canvasObjectsProperty = serializedObject.FindProperty( "Model.CanvasObjectsPrefab" );
             waitTimeProperty = serializedObject.FindProperty( "Model.WaitTime" );
@@ -33,9 +27,6 @@
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
-            //EditorGUILayout.PropertyField( dialogueTextProperty, false );
-            //EditorGUILayout.PropertyField( imageTextProperty, false );
-            //EditorGUILayout.PropertyField( animatorProperty, false );
             EditorGUILayout.PropertyField(gameConversationsProperty, false);
             EditorGUILayout.PropertyField( canvasObjectsProperty, false );
             EditorGUILayout.PropertyField( waitTimeProperty, true );
@@ -44,6 +35,5 @@
             EditorGUILayout.PropertyField( nextKeyProperty, true );
             serializedObject.ApplyModifiedProperties();
         }
-
     }
 }

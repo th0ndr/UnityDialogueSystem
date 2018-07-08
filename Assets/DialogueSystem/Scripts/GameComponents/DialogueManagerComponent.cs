@@ -2,35 +2,38 @@
 {
     using System.Collections;
     using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.UI;
     using DialogueManager.Controllers;
     using DialogueManager.Models;
+    using UnityEngine;
+    using UnityEngine.UI;
 
     /// <summary>
     /// This class manages the text in the dialogues, the transition between sentences, animations, and such
     /// </summary>
     public class DialogueManagerComponent : MonoBehaviour
     {
+        /// <summary> Model of the Dialogue Manager </summary>
         public DialogueManager Model;
-        private DialogueManagerController Controller;
+
+        /// <summary> Controller of the Dialogue Manager </summary>
+        private DialogueManagerController controller;
 
         /// <summary>
         /// Is excecuted when the object is instantiated
         /// </summary>
         private void Awake()
         {
-            GameObject gameConversations = Instantiate(Model.GameConversationsPrefab);
+            GameObject gameConversations = Instantiate( this.Model.GameConversationsPrefab );
             gameConversations.name = "GameConversations";
-            GameObject canvasObjects = Instantiate( Model.CanvasObjectsPrefab );
+            GameObject canvasObjects = Instantiate( this.Model.CanvasObjectsPrefab );
             canvasObjects.name = "DialogueCanvas";
-            
-            Model.DialogueText = GameObject.Find("/DialogueCanvas/DialogueBox/DialogueText").GetComponent<Text>();
-            Model.ImageText = GameObject.Find("/DialogueCanvas/DialogueBox/Image").GetComponent<Image>();
-            Model.Animator = GameObject.Find("/DialogueCanvas/DialogueBox").GetComponent<Animator>();
-            Model.Source = this.GetComponent<AudioSource>();
 
-            Controller = new DialogueManagerController( this.Model );
+            this.Model.DialogueText = GameObject.Find( "/DialogueCanvas/DialogueBox/DialogueText" ).GetComponent<Text>();
+            this.Model.ImageText = GameObject.Find( "/DialogueCanvas/DialogueBox/Image" ).GetComponent<Image>();
+            this.Model.Animator = GameObject.Find( "/DialogueCanvas/DialogueBox" ).GetComponent<Animator>();
+            this.Model.Source = this.GetComponent<AudioSource>();
+
+            this.controller = new DialogueManagerController( this.Model );
         }
 
         /// <summary>
@@ -38,19 +41,20 @@
         /// </summary>
         private void Update()
         {
-            if(Model.DialogueToShow != null)
+            if ( this.Model.DialogueToShow != null )
             {
                 this.StartDialogue();
             }
-            if (Input.GetKeyDown( Model.NextKey ) && Model.Finished && Model.DoubleTap)
+
+            if ( Input.GetKeyDown( this.Model.NextKey ) && this.Model.Finished && this.Model.DoubleTap )
             {
                 this.DisplayNextSentence();
-                Model.Finished = false;
+                this.Model.Finished = false;
             }
 
-            if (Input.GetKeyDown( Model.NextKey ) && Model.DoubleTap == false)
+            if ( Input.GetKeyDown( this.Model.NextKey ) && this.Model.DoubleTap == false )
             {
-                Model.Finished = true;
+                this.Model.Finished = true;
                 this.DisplayNextSentence();
             }
         }
@@ -58,10 +62,9 @@
         /// <summary>
         /// Start new dialogue, and reset all data from previous dialogues
         /// </summary>
-        /// <param name="dialogue">Dialogue that will be displayed</param>
-        public void StartDialogue()
+        private void StartDialogue()
         {
-            Controller.StartDialogue();
+            this.controller.StartDialogue();
             this.DisplayNextSentence();
         }
 
@@ -70,10 +73,10 @@
         /// </summary>
         private void DisplayNextSentence()
         {
-            StopAllCoroutines();
-            if (Controller.DisplayNextSentence())
+            this.StopAllCoroutines();
+            if ( this.controller.DisplayNextSentence() )
             {
-                StartCoroutine( Controller.TypeSentence() );
+                this.StartCoroutine( this.controller.TypeSentence() );
             }
         }
     }

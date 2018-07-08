@@ -17,9 +17,8 @@
         public string Name;
 
         /// <summary>
-        /// Name of the Status which the Conversation will be once the Dialogue of the current Status ends.
+        /// Index of the the NextStatus in the Conversation Status List
         /// </summary>
-        public ConversationStatus NextStatus { get; set; }
         public int NextStatusIndex;
 
         /// <summary>
@@ -28,13 +27,13 @@
         public List<Sentence> Dialogue;
 
         /// <summary>
-        /// The List of the unlocked Status in other Conversations.
+        /// The List of the unlocked <see cref="ConversationStatus"/> in other Conversations.
         /// </summary>
         public List<PendingStatus> NewConversations;
 
-        public override string ToString()
-        {
-            return Name;
-        }
+        /// <summary>
+        /// Gets or sets the <see cref="ConversationStatus"/> in which the Conversation will be once the Dialogue of the current Status ends.
+        /// </summary>
+        public ConversationStatus NextStatus { get; set; }
     }
 }

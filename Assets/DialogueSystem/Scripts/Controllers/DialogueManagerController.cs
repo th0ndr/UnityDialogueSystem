@@ -39,9 +39,9 @@
             sprites.Clear();
             sentences.Clear();
 
-            foreach (Sentence sentence in dialogue.sentences)
+            foreach (Sentence sentence in dialogue.Sentences)
             {
-                expression = sentence.Character.expressions[sentence.ExpressionIndex];
+                expression = sentence.Character.Expressions[sentence.ExpressionIndex];
                 /*
                 if (sentence.StandardExpression)
                 {
@@ -54,7 +54,7 @@
                 */
                 sprites.Enqueue( expression.Image );
                 sentences.Enqueue( sentence.Paragraph );
-                voices.Enqueue( sentence.Character.voice );
+                voices.Enqueue( sentence.Character.Voice );
             }
         }
         
@@ -86,7 +86,7 @@
         /// <returns>Expression that was being looked for, returns null if there wasn't any.</returns>
         private Expression FindExpression(string name, Character character)
         {
-            foreach (Expression expression in character.expressions)
+            foreach (Expression expression in character.Expressions)
             {
                 if (expression.Name.Equals( name ))
                 {

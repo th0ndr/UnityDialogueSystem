@@ -14,8 +14,8 @@
     public class Dialogue
     {
         /// <summary>
-        /// A List in which each sentence contains a game dialogue line.
+        /// A List in which each <see cref="Sentence"/> contains a game dialogue line.
         /// </summary>
-        public List<Sentence> sentences;
+        public List<Sentence> Sentences;
     }
 }

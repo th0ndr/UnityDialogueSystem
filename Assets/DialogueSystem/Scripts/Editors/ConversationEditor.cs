@@ -57,7 +57,7 @@
 
             if (conversation.Status.Count > 0)
             {
-                string[] statusListNames = conversation.Status.Select(s => s.ToString()).ToArray();
+                string[] statusListNames = conversation.Status.Select(s => s.Name).ToArray();
                 conversation.ActiveStatusIndex = EditorGUILayout.Popup(
                     "Active Status",
                     conversation.ActiveStatusIndex,
@@ -165,7 +165,7 @@
 
                     if ( dialogue[i].Character != null )
                     {
-                        string[] expressionListNames = dialogue[i].Character.expressions.Select( e => e.Name ).ToArray();
+                        string[] expressionListNames = dialogue[i].Character.Expressions.Select( e => e.Name ).ToArray();
                         dialogue[i].ExpressionIndex = EditorGUILayout.Popup(
                             "Expression",
                             dialogue[i].ExpressionIndex,

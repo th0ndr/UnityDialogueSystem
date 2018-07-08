@@ -31,7 +31,7 @@
         /// <summary> Key which must be pressed to continue to the next Sentence. </summary>
         public string NextKey = "z";
 
-        /// <summary>  Gets or sets the Text that is being displayed on the Scene. </summary>
+        /// <summary> Gets or sets the Text that is being displayed on the Scene. </summary>
         public Text DialogueText { get; set; }
 
         /// <summary> Gets or sets the Image that is being displayed on the Scene. </summary>
@@ -46,7 +46,7 @@
         /// <summary> Gets or sets a value indicating whether the Dialogue has finished or not. </summary>
         public bool Finished { get; set; }
 
-        /// <summary> Gets or sets the Dialogue that will be displayed. </summary>
+        /// <summary> Gets or sets the <see cref="Dialogue"/> that will be displayed. </summary>
         public Dialogue DialogueToShow { get; set; }
     }
 }

@@ -8,19 +8,13 @@
     [System.Serializable]
     public class Sentence
     {
-        /// <summary>
-        /// Character that will be talking
-        /// </summary>
+        /// <summary> Character who will be talking </summary>
         public Character Character;
 
-        /// <summary>
-        /// Index of the used Expression in the list of the character expressions
-        /// </summary>
+        /// <summary> Index of the used Expression in the list of the character expressions </summary>
         public int ExpressionIndex;
 
-        /// <summary>
-        /// The text that will be displayed.
-        /// </summary>
+        /// <summary> The text that will be displayed. </summary>
         [TextArea( 3, 10 )]
         public string Paragraph;
     }

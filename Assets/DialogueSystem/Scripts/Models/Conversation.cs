@@ -10,40 +10,19 @@
     [System.Serializable]
     public class Conversation
     {
-        /// <summary>
-        /// Name of the conversation.
-        /// </summary>
+        /// <summary> Name of the conversation. </summary>
         public string Name;
 
-        /// <summary>
-        /// Status of the conversation if a Dialogue was Triggered.
-        /// </summary>
+        /// <summary> <see cref="ConversationStatus"/> of the conversation if a Dialogue was Triggered. </summary>
         public ConversationStatus ActiveStatus;
+
+        /// <summary> Index in the Status List of the Active Status </summary>
         public int ActiveStatusIndex;
-        /// <summary>
-        /// List containing all the possible Status each with it's Dialogues.
-        /// </summary>
+
+        /// <summary> List containing all the possible <see cref="ConversationStatus"/> each with it's Dialogues. </summary>
         public List<ConversationStatus> Status;
 
-        /// <summary>
-        /// Pending Status of Game Conversations
-        /// </summary>
+        /// <summary> Gets or sets the pending GameConversations of the scene </summary>
         public GameConversations GameConversations { get; set; }
-    }
-
-    // QUIERO CAMBIAR COMO FUNCIONAN PENDINGCONVERSATION Y PENDINGSTATUS
-    [System.Serializable]
-    public struct PendingConversation
-    {
-        public string ConversationName;
-        public List<PendingStatus> PendingStatus;
-    }
-
-    [System.Serializable]
-    public class PendingStatus
-    {
-        public string ConversationName;
-        public string StatusName;
-        public int Importance;
     }
 }

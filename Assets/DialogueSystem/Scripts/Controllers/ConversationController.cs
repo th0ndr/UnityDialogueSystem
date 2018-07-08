@@ -13,6 +13,7 @@
 
         public ConversationController(Conversation conversation)
         {
+            this.Model.ActiveStatus = this.Model.Status[this.Model.ActiveStatusIndex];
             this.Model = conversation;
         }
         
@@ -59,7 +60,7 @@
 
             Dialogue dialogue = new Dialogue
             {
-                sentences = status.Dialogue,
+                Sentences = status.Dialogue,
             };
 
             dialogueManager.DialogueToShow = dialogue;
