@@ -42,16 +42,6 @@
             foreach (Sentence sentence in dialogue.Sentences)
             {
                 expression = sentence.Character.Expressions[sentence.ExpressionIndex];
-                /*
-                if (sentence.StandardExpression)
-                {
-                    expression = new Expression( sentence.character.standardExpression, "Standard" );
-                }
-                else
-                {
-                    expression = FindExpression( sentence.expression, sentence.character );
-                }
-                */
                 sprites.Enqueue( expression.Image );
                 sentences.Enqueue( sentence.Paragraph );
                 voices.Enqueue( sentence.Character.Voice );

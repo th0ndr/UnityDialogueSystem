@@ -1,4 +1,4 @@
-﻿namespace DialogueManager.Editors
+﻿namespace DialogueManager.InspectorEditors
 {
     using UnityEngine;
     using System.Collections;
