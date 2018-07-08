@@ -16,12 +16,14 @@
         public Character character;
 
         // IGUAL Y PODEMOS QUITAR ESTA
-        public bool StandardExpression = true;
+       // public bool StandardExpression = true;
+
+        public int ExpressionIndex;
 
         /// <summary>
         /// Expression of the Character when talking
         /// </summary>
-        public string expression;
+        //public string expression;
 
         /// <summary>
         /// The text that will be displayed.

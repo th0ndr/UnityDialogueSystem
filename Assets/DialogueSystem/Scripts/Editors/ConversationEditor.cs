@@ -162,7 +162,15 @@
                     dialogueFoldoutDisplay = i;
                     EditorGUI.indentLevel++;
                     dialogue[i].character = EditorGUILayout.ObjectField("Character", dialogue[i].character, typeof(Character), true) as Character;
-                    dialogue[i].expression = EditorGUILayout.TextField("Expression", dialogue[i].expression);
+
+                    string[] expressionListNames = dialogue[i].character.expressions.Select(e => e.Name).ToArray();
+                    dialogue[i].ExpressionIndex = EditorGUILayout.Popup(
+                        "Expression",
+                        dialogue[i].ExpressionIndex,
+                        expressionListNames,
+                        EditorStyles.popup);
+                    //dialogue[i].NextStatus = status[status[i].NextStatusIndex];
+
                     EditorGUILayout.LabelField("Paragraph:");
                     EditorGUI.indentLevel++;
                     dialogue[i].paragraph = EditorGUILayout.TextArea(dialogue[i].paragraph, GUILayout.MaxHeight(75));

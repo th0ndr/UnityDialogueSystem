@@ -183,75 +183,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: dialogueText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: imageText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114731279387165590, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: integerDictionary.m_keys.Array.data[0]
-      value: status
-      objectReference: {fileID: 0}
-    - target: {fileID: 114731279387165590, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: integerDictionary.m_values.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.dialogueText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.imageText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.animator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.DialogueText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.ImageText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.Animator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.CanvasObjectsPrefab
-      value: 
-      objectReference: {fileID: 1976183081792064, guid: f23d949b7b4184f4f8eec5c8410d40c9,
-        type: 2}
-    - target: {fileID: 114970755449612128, guid: f179273886f664410813061b0d4ffe3b,
-        type: 2}
-      propertyPath: Model.GameConversationsPrefab
-      value: 
-      objectReference: {fileID: 1812350911334218, guid: b2e760a7c2b3f1847974ea1e1f6abd01,
-        type: 2}
-    m_RemovedComponents:
-    - {fileID: 114731279387165590, guid: f179273886f664410813061b0d4ffe3b, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f179273886f664410813061b0d4ffe3b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &449070051
@@ -434,7 +366,11 @@ MonoBehaviour:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
         expression: Standard
-        paragraph: Hola
+        paragraph: 'blablabla
+
+          blabla
+
+          bla'
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
         expression: 
@@ -450,7 +386,11 @@ MonoBehaviour:
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
         expression: Standard
-        paragraph: Hola
+        paragraph: 'blablabla
+
+          blabla
+
+          bla'
       - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
         StandardExpression: 1
         expression: 
@@ -807,18 +747,50 @@ MonoBehaviour:
   Model:
     Name: EdgarTerra
     ActiveStatus:
-      Name: Test1
+      Name: TestingNewConversation
       NextStatusIndex: 0
-      Dialogue: []
+      Dialogue:
+      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Ah
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: 'Ah
+
+          Uh'
+      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Yes
       NewConversations:
       - ConversationName: Thoughts
         StatusName: Desbloqueada
         Importance: 0
-    ActiveStatusIndex: 0
+    ActiveStatusIndex: 1
     Status:
-    - Name: Test1
+    - Name: EmptyConv
       NextStatusIndex: 0
       Dialogue: []
+      NewConversations: []
+    - Name: TestingNewConversation
+      NextStatusIndex: 0
+      Dialogue:
+      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Ah
+      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: 'Ah
+
+          Uh'
+      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+        StandardExpression: 1
+        expression: 
+        paragraph: Yes
       NewConversations:
       - ConversationName: Thoughts
         StatusName: Desbloqueada

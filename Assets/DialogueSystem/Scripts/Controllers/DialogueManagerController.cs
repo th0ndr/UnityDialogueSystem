@@ -41,6 +41,8 @@
 
             foreach (Sentence sentence in dialogue.sentences)
             {
+                expression = sentence.character.expressions[sentence.ExpressionIndex];
+                /*
                 if (sentence.StandardExpression)
                 {
                     expression = new Expression( sentence.character.standardExpression, "Standard" );
@@ -49,7 +51,7 @@
                 {
                     expression = FindExpression( sentence.expression, sentence.character );
                 }
-
+                */
                 sprites.Enqueue( expression.Image );
                 sentences.Enqueue( sentence.paragraph );
                 voices.Enqueue( sentence.character.voice );

@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4619059805044586}
   - component: {fileID: 114970755449612128}
   - component: {fileID: 82396047206663494}
-  - component: {fileID: 114731279387165590}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -36,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444325007202960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.535, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,72 +70,72 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - serializedVersion: 2
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114731279387165590
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1444325007202960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 040bb6f5d57e44bdba348e716ba82a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  integerDictionary:
-    m_keys:
-    - var
-    m_values: 2c010000
 --- !u!114 &114970755449612128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,9 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9285c391d23a34ad5bda2483061004e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 0}
-  imageText: {fileID: 0}
-  animator: {fileID: 0}
-  waitTime: 0.01
-  voiceVolume: 1
-  doubleTap: 1
+  Model:
+    CanvasObjectsPrefab: {fileID: 1976183081792064, guid: f23d949b7b4184f4f8eec5c8410d40c9,
+      type: 2}
+    GameConversationsPrefab: {fileID: 1812350911334218, guid: b2e760a7c2b3f1847974ea1e1f6abd01,
+      type: 2}
+    WaitTime: 0.01
+    VoiceVolume: 1
+    DoubleTap: 1
+    NextKey: z

@@ -13,5 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Terra
   standardExpression: {fileID: 21300000, guid: 803089d297c27f5448f04b55147ce902, type: 3}
-  expressions: []
+  expressions:
+  - Name: Standard
+    Image: {fileID: 21300000, guid: 803089d297c27f5448f04b55147ce902, type: 3}
   voice: {fileID: 8300000, guid: a6153426dd4f2e94d821b723bba5104b, type: 3}

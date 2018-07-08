@@ -11,7 +11,6 @@ public class Character : ScriptableObject
 {
     public string characterName;
     public Sprite standardExpression;
-    public Expression[] expressions;
+    public List<Expression> expressions;
     public AudioClip voice;
-
 }
