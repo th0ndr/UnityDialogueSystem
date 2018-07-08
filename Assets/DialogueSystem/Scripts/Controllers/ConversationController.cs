@@ -13,7 +13,7 @@
 
         public ConversationController(Conversation conversation)
         {
-            this.Model.ActiveStatus = this.Model.Status[this.Model.ActiveStatusIndex];
+            conversation.ActiveStatus = conversation.Status[conversation.ActiveStatusIndex];
             this.Model = conversation;
         }
         

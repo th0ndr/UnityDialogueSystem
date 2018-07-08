@@ -11,13 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92a13d7f6fef483fb23cc01bb9fbc4e, type: 3}
   m_Name: Linda
   m_EditorClassIdentifier: 
-  characterName: Linda
-  standardExpression: {fileID: 21300002, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
-  expressions:
-  - Name: Blush
-    Image: {fileID: 21300010, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
-  - Name: Surprise
+  Name: Linda
+  Expressions:
+  - Name: Happy
     Image: {fileID: 21300004, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
-  - Name: 
-    Image: {fileID: 0}
-  voice: {fileID: 8300000, guid: a6153426dd4f2e94d821b723bba5104b, type: 3}
+  - Name: Surprised
+    Image: {fileID: 21300010, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
+  Voice: {fileID: 8300000, guid: 15f78045876f69b4299dcd5404a08130, type: 3}

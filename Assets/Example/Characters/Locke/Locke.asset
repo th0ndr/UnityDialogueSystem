@@ -11,11 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92a13d7f6fef483fb23cc01bb9fbc4e, type: 3}
   m_Name: Locke
   m_EditorClassIdentifier: 
-  characterName: Locke
-  standardExpression: {fileID: 21300000, guid: 0cf708f43c366864a9978689a09ed28a, type: 3}
-  expressions:
+  Name: Locke
+  Expressions:
   - Name: Standard
     Image: {fileID: 21300000, guid: 0cf708f43c366864a9978689a09ed28a, type: 3}
   - Name: Angry
     Image: {fileID: 21300000, guid: 7f631538f4d9d4c00b2707a95817364d, type: 3}
-  voice: {fileID: 8300000, guid: cd20c7c59ffd36d48b487bf128a314f7, type: 3}
+  Voice: {fileID: 8300000, guid: cd20c7c59ffd36d48b487bf128a314f7, type: 3}

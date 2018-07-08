@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92a13d7f6fef483fb23cc01bb9fbc4e, type: 3}
   m_Name: Winston
   m_EditorClassIdentifier: 
-  characterName: Winston
-  standardExpression: {fileID: 21300000, guid: 5d8048aa68f034a8495a96aaf8981c08, type: 3}
-  expressions: []
-  voice: {fileID: 8300000, guid: 604037fcbc6124a509094445b9113ad3, type: 3}
+  Name: Winston
+  Expressions:
+  - Name: Standard
+    Image: {fileID: 21300000, guid: 5d8048aa68f034a8495a96aaf8981c08, type: 3}
+  Voice: {fileID: 8300000, guid: 604037fcbc6124a509094445b9113ad3, type: 3}

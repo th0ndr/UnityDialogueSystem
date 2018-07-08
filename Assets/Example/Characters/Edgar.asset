@@ -11,9 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92a13d7f6fef483fb23cc01bb9fbc4e, type: 3}
   m_Name: Edgar
   m_EditorClassIdentifier: 
-  characterName: Edgar
-  standardExpression: {fileID: 21300000, guid: b0f5dc746d2de23438afc28177b92e24, type: 3}
-  expressions:
+  Name: Edgar
+  Expressions:
   - Name: Standard
     Image: {fileID: 21300000, guid: b0f5dc746d2de23438afc28177b92e24, type: 3}
-  voice: {fileID: 8300000, guid: 8121f87281315924aba3ee8cdb9b20e8, type: 3}
+  Voice: {fileID: 8300000, guid: 8121f87281315924aba3ee8cdb9b20e8, type: 3}

@@ -11,9 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92a13d7f6fef483fb23cc01bb9fbc4e, type: 3}
   m_Name: Terra
   m_EditorClassIdentifier: 
-  characterName: Terra
-  standardExpression: {fileID: 21300000, guid: 803089d297c27f5448f04b55147ce902, type: 3}
-  expressions:
+  Name: Terra
+  Expressions:
   - Name: Standard
     Image: {fileID: 21300000, guid: 803089d297c27f5448f04b55147ce902, type: 3}
-  voice: {fileID: 8300000, guid: a6153426dd4f2e94d821b723bba5104b, type: 3}
+  Voice: {fileID: 8300000, guid: a6153426dd4f2e94d821b723bba5104b, type: 3}
