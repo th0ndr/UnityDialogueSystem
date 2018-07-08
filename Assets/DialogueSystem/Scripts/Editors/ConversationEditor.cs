@@ -43,7 +43,6 @@
 
             EditorGUILayout.PropertyField(nameProperty, true);
             this.DisplayStatusFields(conversationComponent.Model);
-            //EditorGUILayout.PropertyField(statusProperty, true);
 
             serializedObject.ApplyModifiedProperties();
         }

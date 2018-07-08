@@ -363,52 +363,38 @@ MonoBehaviour:
       Name: Prueba
       NextStatusIndex: 1
       Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: Standard
-        paragraph: 'blablabla
-
-          blabla
-
-          bla'
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: 'Que tal
-
-          :D'
+      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        ExpressionIndex: 0
+        Paragraph: I'm feeling...[0.05]... VERY
+      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        ExpressionIndex: 1
+        Paragraph: ANGRY
       NewConversations: []
     ActiveStatusIndex: 0
     Status:
     - Name: Prueba
       NextStatusIndex: 1
       Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: Standard
-        paragraph: 'blablabla
-
-          blabla
-
-          bla'
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: 'Que tal
-
-          :D'
+      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        ExpressionIndex: 0
+        Paragraph: I'm feeling...[0.05]... VERY
+      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        ExpressionIndex: 1
+        Paragraph: ANGRY
       NewConversations: []
     - Name: Nada
       NextStatusIndex: 1
       Dialogue: []
       NewConversations: []
     - Name: Desbloqueada
-      NextStatusIndex: 1
+      NextStatusIndex: 2
       Dialogue:
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: SECRETS
+      - Character: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636, type: 2}
+        ExpressionIndex: 0
+        Paragraph: ASDF
+      - Character: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636, type: 2}
+        ExpressionIndex: 0
+        Paragraph: NANIII
       NewConversations: []
 --- !u!114 &926136344
 MonoBehaviour:
@@ -750,20 +736,19 @@ MonoBehaviour:
       Name: TestingNewConversation
       NextStatusIndex: 0
       Dialogue:
-      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Ah
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: 'Ah
+      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        ExpressionIndex: 0
+        Paragraph: Ah
+      - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+        ExpressionIndex: 0
+        Paragraph: Eh
+      - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+        ExpressionIndex: 0
+        Paragraph: 'Ah
 
-          Uh'
-      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Yes
+          EH
+
+          IH'
       NewConversations:
       - ConversationName: Thoughts
         StatusName: Desbloqueada
@@ -777,20 +762,19 @@ MonoBehaviour:
     - Name: TestingNewConversation
       NextStatusIndex: 0
       Dialogue:
-      - character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Ah
-      - character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: 'Ah
+      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+        ExpressionIndex: 0
+        Paragraph: Ah
+      - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+        ExpressionIndex: 0
+        Paragraph: Eh
+      - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+        ExpressionIndex: 0
+        Paragraph: 'Ah
 
-          Uh'
-      - character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        StandardExpression: 1
-        expression: 
-        paragraph: Yes
+          EH
+
+          IH'
       NewConversations:
       - ConversationName: Thoughts
         StatusName: Desbloqueada
