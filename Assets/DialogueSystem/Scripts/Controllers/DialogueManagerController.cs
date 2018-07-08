@@ -41,7 +41,7 @@
 
             foreach (Sentence sentence in dialogue.sentences)
             {
-                expression = sentence.character.expressions[sentence.ExpressionIndex];
+                expression = sentence.Character.expressions[sentence.ExpressionIndex];
                 /*
                 if (sentence.StandardExpression)
                 {
@@ -53,8 +53,8 @@
                 }
                 */
                 sprites.Enqueue( expression.Image );
-                sentences.Enqueue( sentence.paragraph );
-                voices.Enqueue( sentence.character.voice );
+                sentences.Enqueue( sentence.Paragraph );
+                voices.Enqueue( sentence.Character.voice );
             }
         }
         
@@ -130,21 +130,21 @@
                 }
                 else
                 {
-                    if (Input.GetKeyDown( this.Model.NextKey ) && this.Model.finished == false)
+                    if (Input.GetKeyDown( this.Model.NextKey ) && this.Model.Finished == false)
                     {
                         this.Model.DialogueText.text = ParseSentence( sentence );
-                        this.Model.finished = true;
+                        this.Model.Finished = true;
                         yield break;
                     }
                     else
                     {
                         this.Model.DialogueText.text += letter;
-                        this.Model.source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
+                        this.Model.Source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
                         yield return new WaitForSeconds( this.Model.WaitTime );
                     }
                 }
             }
-            this.Model.finished = true;
+            this.Model.Finished = true;
         }
         
         /// <summary>

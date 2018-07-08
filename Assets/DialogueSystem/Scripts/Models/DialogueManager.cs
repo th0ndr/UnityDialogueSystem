@@ -1,5 +1,5 @@
 ﻿namespace DialogueManager.Models
-{ 
+{
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -13,44 +13,40 @@
     [Serializable]
     public class DialogueManager
     {
+        /// <summary> Prefabs of the Dialogue Box, text and image. </summary>
         public GameObject CanvasObjectsPrefab;
+
+        /// <summary> Prefab of the GameConversations. </summary>
         public GameObject GameConversationsPrefab;
-        //public GameConversations GameConversations;
 
-        /// <summary>
-        /// Text that is being displayed on the Scene.
-        /// </summary>
-        public Text DialogueText { get; set; }
-
-        /// <summary>
-        /// Image that is being displayed on the Scene.
-        /// </summary>
-        public Image ImageText { get; set; }
-
-        /// <summary>
-        /// Animation that causes the Dialogue box to go up or down.
-        /// </summary>
-        public Animator Animator { get; set; }
-
-        /// <summary>
-        /// Time between each letter.
-        /// </summary>
+        /// <summary> Time between each letter. </summary>
         public float WaitTime = .01f;
 
-        /// <summary>
-        /// Volume of the Voice of the characters.
-        /// </summary>
+        /// <summary> Volume of the Voice of the characters. </summary>
         public float VoiceVolume = 1f;
-        
+
+        /// <summary> Is double tap. </summary>
         public bool DoubleTap = true;
 
-        /// <summary>
-        /// Key which must be pressed to continue to the next Sentence
-        /// </summary>
+        /// <summary> Key which must be pressed to continue to the next Sentence. </summary>
         public string NextKey = "z";
 
-        public AudioSource source { get; set; }
-        public bool finished { get; set; }
+        /// <summary>  Gets or sets the Text that is being displayed on the Scene. </summary>
+        public Text DialogueText { get; set; }
+
+        /// <summary> Gets or sets the Image that is being displayed on the Scene. </summary>
+        public Image ImageText { get; set; }
+
+        /// <summary> Gets or sets the Animation that causes the Dialogue box to go up or down. </summary>
+        public Animator Animator { get; set; }
+
+        /// <summary> Gets or sets the Audio that the current dialogue is showing. </summary>
+        public AudioSource Source { get; set; }
+
+        /// <summary> Gets or sets a value indicating whether the Dialogue has finished or not. </summary>
+        public bool Finished { get; set; }
+
+        /// <summary> Gets or sets the Dialogue that will be displayed. </summary>
         public Dialogue DialogueToShow { get; set; }
     }
 }

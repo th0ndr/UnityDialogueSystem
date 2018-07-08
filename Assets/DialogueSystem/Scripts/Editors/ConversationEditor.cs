@@ -161,20 +161,22 @@
                 {
                     dialogueFoldoutDisplay = i;
                     EditorGUI.indentLevel++;
-                    dialogue[i].character = EditorGUILayout.ObjectField("Character", dialogue[i].character, typeof(Character), true) as Character;
+                    dialogue[i].Character = EditorGUILayout.ObjectField("Character", dialogue[i].Character, typeof(Character), true) as Character;
 
-                    string[] expressionListNames = dialogue[i].character.expressions.Select(e => e.Name).ToArray();
-                    dialogue[i].ExpressionIndex = EditorGUILayout.Popup(
-                        "Expression",
-                        dialogue[i].ExpressionIndex,
-                        expressionListNames,
-                        EditorStyles.popup);
-                    //dialogue[i].NextStatus = status[status[i].NextStatusIndex];
-
-                    EditorGUILayout.LabelField("Paragraph:");
-                    EditorGUI.indentLevel++;
-                    dialogue[i].paragraph = EditorGUILayout.TextArea(dialogue[i].paragraph, GUILayout.MaxHeight(75));
-                    EditorGUI.indentLevel--;
+                    if ( dialogue[i].Character != null )
+                    {
+                        string[] expressionListNames = dialogue[i].Character.expressions.Select( e => e.Name ).ToArray();
+                        dialogue[i].ExpressionIndex = EditorGUILayout.Popup(
+                            "Expression",
+                            dialogue[i].ExpressionIndex,
+                            expressionListNames,
+                            EditorStyles.popup );
+                        EditorGUILayout.LabelField( "Paragraph:" );
+                        EditorGUI.indentLevel++;
+                        dialogue[i].Paragraph = EditorGUILayout.TextArea( dialogue[i].Paragraph, GUILayout.MaxHeight( 75 ) );
+                        EditorGUI.indentLevel--;
+                    }
+                    
                     EditorGUI.indentLevel--;
                 }
             }

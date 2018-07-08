@@ -1,9 +1,7 @@
 ﻿namespace DialogueManager.Models
 {
-    using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
-    
+
     /// <summary>
     /// Each dialogue has several sentences, and each sentence has text, and character
     /// </summary>
@@ -13,22 +11,17 @@
         /// <summary>
         /// Character that will be talking
         /// </summary>
-        public Character character;
-
-        // IGUAL Y PODEMOS QUITAR ESTA
-       // public bool StandardExpression = true;
-
-        public int ExpressionIndex;
+        public Character Character;
 
         /// <summary>
-        /// Expression of the Character when talking
+        /// Index of the used Expression in the list of the character expressions
         /// </summary>
-        //public string expression;
+        public int ExpressionIndex;
 
         /// <summary>
         /// The text that will be displayed.
         /// </summary>
         [TextArea( 3, 10 )]
-        public string paragraph;
+        public string Paragraph;
     }
 }

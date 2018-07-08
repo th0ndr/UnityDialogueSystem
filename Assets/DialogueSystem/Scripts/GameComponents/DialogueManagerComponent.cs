@@ -28,7 +28,7 @@
             Model.DialogueText = GameObject.Find("/DialogueCanvas/DialogueBox/DialogueText").GetComponent<Text>();
             Model.ImageText = GameObject.Find("/DialogueCanvas/DialogueBox/Image").GetComponent<Image>();
             Model.Animator = GameObject.Find("/DialogueCanvas/DialogueBox").GetComponent<Animator>();
-            Model.source = this.GetComponent<AudioSource>();
+            Model.Source = this.GetComponent<AudioSource>();
 
             Controller = new DialogueManagerController( this.Model );
         }
@@ -42,15 +42,15 @@
             {
                 this.StartDialogue();
             }
-            if (Input.GetKeyDown( Model.NextKey ) && Model.finished && Model.DoubleTap)
+            if (Input.GetKeyDown( Model.NextKey ) && Model.Finished && Model.DoubleTap)
             {
                 this.DisplayNextSentence();
-                Model.finished = false;
+                Model.Finished = false;
             }
 
             if (Input.GetKeyDown( Model.NextKey ) && Model.DoubleTap == false)
             {
-                Model.finished = true;
+                Model.Finished = true;
                 this.DisplayNextSentence();
             }
         }

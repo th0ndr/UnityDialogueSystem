@@ -12,11 +12,12 @@
     public class GameConversations
     {
         /// <summary>
-        /// List of all the Pending Conversations in case they are Triggered.
+        /// Gets or sets the list of all the Pending Conversations in case they are Triggered.
         /// </summary>
         public List<PendingConversation> PendingConversations { get; set; }
+
         /// <summary>
-        /// List of conversations that haven't been added to PendingConversations
+        /// Gets or sets the list of conversations that haven't been added to PendingConversations
         /// </summary>
         public List<PendingStatus> ConversationsToAdd { get; set; }
     }

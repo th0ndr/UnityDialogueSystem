@@ -10,14 +10,26 @@
     [System.Serializable]
     public class Expression
     {
+        /// <summary>
+        /// Name of the Character Expression
+        /// </summary>
         [Header( "Expression" )]
         public string Name;
+
+        /// <summary>
+        /// Image that will be displayed in the Expression
+        /// </summary>
         public Sprite Image;
 
-        public Expression(Sprite Image, string Name)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Expression"/> class.
+        /// </summary>
+        /// <param name="name">Name of the Expression</param>
+        /// <param name="image">Image showed in the Dialogue</param>
+        public Expression( string name, Sprite image )
         {
-            this.Image = Image;
-            this.Name = Name;
+            this.Image = image;
+            this.Name = name;
         }
     }
 }
