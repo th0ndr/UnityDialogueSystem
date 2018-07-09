@@ -55,15 +55,8 @@
         {
             // DENTRO DE PLAYERCONVERSATIONS SE DEBE HACER LA LOGICA PARA QUE NO SE REPITAN
             this.Model.GameConversations.ConversationsToAdd.AddRange( status.NewConversations );
-            
 
-
-            Dialogue dialogue = new Dialogue
-            {
-                Sentences = status.Dialogue,
-            };
-
-            dialogueManager.DialogueToShow = dialogue;
+            dialogueManager.DialogueToShow = status.Dialogue;
             this.Model.ActiveStatus = status.NextStatus;
             this.Model.ActiveStatusIndex = status.NextStatusIndex;
         }

@@ -24,7 +24,7 @@
         /// <summary>
         /// The complete Dialogue which will be displayed.
         /// </summary>
-        public List<Sentence> Dialogue;
+        public Dialogue Dialogue;
 
         /// <summary>
         /// The List of the unlocked <see cref="ConversationStatus"/> in other Conversations.

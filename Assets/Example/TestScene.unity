@@ -340,7 +340,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 926136341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 0.476, z: 0}
+  m_LocalPosition: {x: 0.21, y: 0.271, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 790724258}
@@ -363,38 +363,47 @@ MonoBehaviour:
       Name: Prueba
       NextStatusIndex: 1
       Dialogue:
-      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        ExpressionIndex: 0
-        Paragraph: I'm feeling...[0.05]... VERY
-      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        ExpressionIndex: 1
-        Paragraph: ANGRY
+        Sentences:
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 0
+          Paragraph: 'Hello
+
+            World
+
+            xxdxdxdx'
       NewConversations: []
     ActiveStatusIndex: 0
     Status:
     - Name: Prueba
       NextStatusIndex: 1
       Dialogue:
-      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        ExpressionIndex: 0
-        Paragraph: I'm feeling...[0.05]... VERY
-      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        ExpressionIndex: 1
-        Paragraph: ANGRY
+        Sentences:
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 0
+          Paragraph: 'Hello
+
+            World
+
+            xxdxdxdx'
       NewConversations: []
     - Name: Nada
       NextStatusIndex: 1
-      Dialogue: []
+      Dialogue:
+        Sentences: []
       NewConversations: []
     - Name: Desbloqueada
       NextStatusIndex: 2
       Dialogue:
-      - Character: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636, type: 2}
-        ExpressionIndex: 0
-        Paragraph: ASDF
-      - Character: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636, type: 2}
-        ExpressionIndex: 0
-        Paragraph: NANIII
+        Sentences:
+        - Character: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Hey :)
+        - Character: {fileID: 11400000, guid: 5d962f7bd41cf4b11b1d671e3a8b7eff, type: 2}
+          ExpressionIndex: 0
+          Paragraph: OMAE WA MOU SHINDEIRU
+        - Character: {fileID: 11400000, guid: 4fb3e6e0488cffb4d98bf4c746688636, type: 2}
+          ExpressionIndex: 1
+          Paragraph: NANIIIII
       NewConversations: []
 --- !u!114 &926136344
 MonoBehaviour:
@@ -509,7 +518,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1189141282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1151861, y: 0.09537544, z: -0.044921875}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 124858266}
@@ -713,7 +722,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1547249284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.852, y: -0.488, z: 0}
+  m_LocalPosition: {x: -0.92, y: -0.312, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 790724258}
@@ -736,19 +745,16 @@ MonoBehaviour:
       Name: TestingNewConversation
       NextStatusIndex: 0
       Dialogue:
-      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        ExpressionIndex: 0
-        Paragraph: Ah
-      - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        ExpressionIndex: 0
-        Paragraph: Eh
-      - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        ExpressionIndex: 0
-        Paragraph: 'Ah
-
-          EH
-
-          IH'
+        Sentences:
+        - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ah
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Eh
+        - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ih
       NewConversations:
       - ConversationName: Thoughts
         StatusName: Desbloqueada
@@ -757,24 +763,22 @@ MonoBehaviour:
     Status:
     - Name: EmptyConv
       NextStatusIndex: 0
-      Dialogue: []
+      Dialogue:
+        Sentences: []
       NewConversations: []
     - Name: TestingNewConversation
       NextStatusIndex: 0
       Dialogue:
-      - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
-        ExpressionIndex: 0
-        Paragraph: Ah
-      - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
-        ExpressionIndex: 0
-        Paragraph: Eh
-      - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
-        ExpressionIndex: 0
-        Paragraph: 'Ah
-
-          EH
-
-          IH'
+        Sentences:
+        - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ah
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Eh
+        - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ih
       NewConversations:
       - ConversationName: Thoughts
         StatusName: Desbloqueada
@@ -800,7 +804,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4071782825775314, guid: 5a91d8fbb58b437428e0b7379aff2f22, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.164
+      value: 0.146
       objectReference: {fileID: 0}
     - target: {fileID: 4071782825775314, guid: 5a91d8fbb58b437428e0b7379aff2f22, type: 2}
       propertyPath: m_LocalPosition.y
