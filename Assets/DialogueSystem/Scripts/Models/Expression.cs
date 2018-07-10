@@ -25,5 +25,10 @@
             this.Image = image;
             this.Name = name;
         }
+
+        public Expression()
+        {
+            this.Name = string.Empty;
+        }
     }
 }

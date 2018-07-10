@@ -371,6 +371,9 @@ MonoBehaviour:
             World
 
             xxdxdxdx'
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 1
+          Paragraph: AHHHHHHHHHHHHHHHHHHH
       NewConversations: []
     ActiveStatusIndex: 0
     Status:
@@ -385,6 +388,9 @@ MonoBehaviour:
             World
 
             xxdxdxdx'
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 1
+          Paragraph: AHHHHHHHHHHHHHHHHHHH
       NewConversations: []
     - Name: Nada
       NextStatusIndex: 1
@@ -804,7 +810,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4071782825775314, guid: 5a91d8fbb58b437428e0b7379aff2f22, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.146
+      value: 0.139
       objectReference: {fileID: 0}
     - target: {fileID: 4071782825775314, guid: 5a91d8fbb58b437428e0b7379aff2f22, type: 2}
       propertyPath: m_LocalPosition.y

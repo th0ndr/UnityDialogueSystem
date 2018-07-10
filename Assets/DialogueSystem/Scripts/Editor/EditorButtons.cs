@@ -18,27 +18,27 @@
         public static GUILayoutOption MiniButtonWidth = GUILayout.Width( 24f );
 
         /// <summary> Add Status Editor GUI Button </summary>
-        public static GUIContent AddStatusButton = new GUIContent( "Add Status", "Add Status" );
+        public static GUIContent AddStatusButton = new GUIContent( "Add", "Add Status" );
 
         /// <summary> Remove Status Editor GUI Button </summary>
         public static GUIContent RemoveStatusButton = new GUIContent( "-", "Remove Status" );
 
         /// <summary> Add Dialgue Editor GUI Button </summary>
-        public static GUIContent AddDialogueButton = new GUIContent( "Add Dialogue", "Add Dialogue" );
+        public static GUIContent AddDialogueButton = new GUIContent( "Add", "Add Dialogue" );
 
         /// <summary> Remove Dialogue Editor GUI Button </summary>
         public static GUIContent RemoveDialogueButton = new GUIContent( "-", "Remove Dialogue" );
-
-        /// <summary> Add Conversation Button </summary>
-        public static GUIContent AddConversationButton = new GUIContent( "Add Conversation", "Add Conversation" );
-
-        /// <summary> Add Status Button </summary>
-        public static GUIContent RemoveConversationButton = new GUIContent( "-", "Remove Conversation" );
-
-        /// <summary> Add Status Button </summary>
+        
+        /// <summary> Add Pending Status Button </summary>
         public static GUIContent AddPendingStatusButton = new GUIContent( "Add", "Add PendingStatus" );
 
-        /// <summary> Add Status Button </summary>
+        /// <summary> Remove Pending Status Button </summary>
         public static GUIContent RemovePendingStatusButton = new GUIContent( "-", "Remove PendingStatus" );
+
+        /// <summary> Add Expression Button </summary>
+        public static GUIContent AddExpressionButton = new GUIContent( "Add", "Add Expression" );
+
+        /// <summary> Remove Expression Button </summary>
+        public static GUIContent RemoveExpressionButton = new GUIContent( "-", "Remove Expression" );
     }
 }
