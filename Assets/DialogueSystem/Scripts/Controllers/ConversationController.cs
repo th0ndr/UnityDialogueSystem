@@ -7,58 +7,66 @@
     using DialogueManager.Models;
     using UnityEngine;
 
+    /// <summary>
+    /// Controller for the Conversation Component
+    /// </summary>
     public class ConversationController
     {
-        private Conversation Model;
+        /// <summary> Model of the Conversation </summary>
+        private Conversation model;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConversationController"/> class.
+        /// </summary>
+        /// <param name="conversation">Model of the Conversation</param>
         public ConversationController(Conversation conversation)
         {
             conversation.ActiveStatus = conversation.Status[conversation.ActiveStatusIndex];
-            this.Model = conversation;
+            this.model = conversation;
         }
         
+        /// <summary>
+        /// Triggers a Conversation, checking if there is an unlocked Conversation Status and Triggering the correct Status
+        /// </summary>
+        /// <param name="dialogueManager">Dialogue Manager where the Dialogue will be displayed</param>
         public void Trigger(DialogueManager dialogueManager)
         {
-            // ESTARIA BIEN HACER UN DICCIONARIO PARA EVITAR HACER EL FOREACH
-            foreach (PendingConversation pending in this.Model.GameConversations.PendingConversations)
+            var conversations = this.model.GameConversations.PendingConversations;
+            if (conversations.ContainsKey( this.model.Name ) && conversations[this.model.Name].Count > 0)
             {
-                if (pending.ConversationName.Equals( this.Model.Name ))
-                {
-                    // POR AHORA SOLO PUEDE AGARRA UN STATUS
-                    this.Model.ActiveStatus = this.Model.Status.Where(
-                        status => status.Name.Equals(pending.PendingStatus[0].StatusName)).FirstOrDefault();
-                    this.Model.GameConversations.PendingConversations.Remove( pending );
-                    // FALTA CAMBIAR METODO PARA VARIOS POSIBLES STATUS CON PRIORIDAD
+                var statusList = conversations[this.model.Name];
+                string statusName = statusList[0].StatusName;
+                statusList.RemoveAt( 0 );
 
-                    break;
-                }
+                this.model.ActiveStatus = this
+                    .model
+                    .Status
+                    .Where( status => status.Name.Equals( statusName ) )
+                    .First();
+
+                this.model.ActiveStatusIndex = this
+                    .model
+                    .Status
+                    .IndexOf( this.model.ActiveStatus );
             }
 
-            if (this.Model.ActiveStatus != null)
+            if (this.model.ActiveStatus != null)
             {
-                this.TriggerStatus(this.Model.ActiveStatus, dialogueManager);
-                /*
-                // ESTARIA BIEN HACER UN DICCIONARIO PARA EVITAR HACER EL FOREACH
-                foreach (ConversationStatus status in this.Model.Status)
-                {
-                    if (status.Name.Equals( this.Model.ActiveStatus ))
-                    {
-                        this.TriggerStatus( status, dialogueManager );
-                        break;
-                    }
-                }
-                */
+                this.TriggerStatus(dialogueManager);
             }
         }
 
-        public void TriggerStatus(ConversationStatus status, DialogueManager dialogueManager)
+        /// <summary>
+        /// Triggers the ActiveStatus and changes it to the NextStatus
+        /// </summary>
+        /// <param name="dialogueManager">Dialogue Manager where the Dialogue will be displayed</param>
+        private void TriggerStatus(DialogueManager dialogueManager)
         {
-            // DENTRO DE PLAYERCONVERSATIONS SE DEBE HACER LA LOGICA PARA QUE NO SE REPITAN
-            this.Model.GameConversations.ConversationsToAdd.AddRange( status.NewConversations );
-
+            ConversationStatus status = this.model.ActiveStatus;
+            this.model.GameConversations.ConversationsToAdd.AddRange( status.NewConversations );
             dialogueManager.DialogueToShow = status.Dialogue;
-            this.Model.ActiveStatus = status.NextStatus;
-            this.Model.ActiveStatusIndex = status.NextStatusIndex;
+            this.model.ActiveStatus = status.NextStatus;
+            this.model.ActiveStatusIndex = status.NextStatusIndex;
         }
     }
 }

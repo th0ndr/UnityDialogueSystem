@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using DialogueManager.Models;
     using UnityEditor;
+    using UnityEditor.SceneManagement;
     using UnityEngine;
 
     /// <summary>
@@ -16,8 +17,9 @@
         /// </summary>
         public override void OnInspectorGUI()
         {
+            EditorGUI.BeginChangeCheck();
             serializedObject.Update();
-            Character character = ( Character )target;
+            Character character = ( Character )this.target;
 
             character.Name = EditorGUILayout.TextField( "Name", character.Name );
             character.Voice = EditorGUILayout.ObjectField( "Voice", character.Voice, typeof( AudioClip ), true ) as AudioClip;
@@ -35,8 +37,13 @@
                 Expression newExpression = new Expression();
                 character.Expressions.Add( newExpression );
             }
-
-            serializedObject.ApplyModifiedProperties();
+            
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty( this.target );
+                EditorSceneManager.MarkSceneDirty( EditorSceneManager.GetActiveScene() );
+            }
         }
     }
 }

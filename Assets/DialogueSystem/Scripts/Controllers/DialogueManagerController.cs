@@ -1,4 +1,5 @@
-﻿namespace DialogueManager.Controllers { 
+﻿namespace DialogueManager.Controllers
+{
     using System;
     using System.Collections;
     using System.Collections.Generic;
@@ -18,7 +19,7 @@
         private Expression expression;
 
         public DialogueManager Model;
-        public DialogueManagerController(DialogueManager Model)
+        public DialogueManagerController( DialogueManager Model )
         {
             this.Model = Model;
             sentences = new Queue<string>();
@@ -47,7 +48,7 @@
                 voices.Enqueue( sentence.Character.Voice );
             }
         }
-        
+
         /// <summary>
         /// Display next sentence in dialogue
         /// </summary>
@@ -67,14 +68,14 @@
             return true;
         }
 
-        
+
         /// <summary>
         /// Find Expression in characcter, by expression name.
         /// </summary>
         /// <param name="name">Name of the Expression.</param>
         /// <param name="character">Character in which the Expression will be found.</param>
         /// <returns>Expression that was being looked for, returns null if there wasn't any.</returns>
-        private Expression FindExpression(string name, Character character)
+        private Expression FindExpression( string name, Character character )
         {
             foreach (Expression expression in character.Expressions)
             {
@@ -136,7 +137,7 @@
             }
             this.Model.Finished = true;
         }
-        
+
         /// <summary>
         /// Hides dialogue box
         /// </summary>
@@ -144,13 +145,13 @@
         {
             this.Model.Animator.SetBool( "IsOpen", false );
         }
-        
+
         /// <summary>
         /// Parses the sentence, for fully displaying it.
         /// </summary>
         /// <param name="sentence">Sentence to be parsed.</param>
         /// <returns>Returns the complete sentence witout the [time] labels</returns>
-        private string ParseSentence(string sentence)
+        private string ParseSentence( string sentence )
         {
             string parsedSentence = "";
             bool normalSentence = true;

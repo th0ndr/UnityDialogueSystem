@@ -13,8 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Linda
   Expressions:
-  - Name: Happy
-    Image: {fileID: 21300004, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
   - Name: Surprised
     Image: {fileID: 21300010, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
+  - Name: Blushed
+    Image: {fileID: 21300012, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
+  - Name: Crying
+    Image: {fileID: 21300008, guid: bf3c2b04aeafd1b449d18e3b84e8a156, type: 3}
   Voice: {fileID: 8300000, guid: 15f78045876f69b4299dcd5404a08130, type: 3}

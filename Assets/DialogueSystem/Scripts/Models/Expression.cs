@@ -26,6 +26,9 @@
             this.Name = name;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Expression"/> class.
+        /// </summary>
         public Expression()
         {
             this.Name = string.Empty;

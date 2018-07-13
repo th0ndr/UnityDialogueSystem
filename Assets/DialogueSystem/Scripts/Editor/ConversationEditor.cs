@@ -5,6 +5,7 @@
     using DialogueManager.GameComponents;
     using DialogueManager.Models;
     using UnityEditor;
+    using UnityEditor.SceneManagement;
     using UnityEngine;
 
     /// <summary>
@@ -18,6 +19,7 @@
         /// </summary>
         public override void OnInspectorGUI()
         {
+            EditorGUI.BeginChangeCheck();
             serializedObject.Update();
             ConversationComponent conversationComponent = ( ConversationComponent )target;
             Conversation model = conversationComponent.Model;
@@ -52,7 +54,15 @@
             EditorGUILayout.Space();
             EditorGUILayout.Space();
 
-            serializedObject.ApplyModifiedProperties();
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+                EditorUtility.SetDirty( this.target );
+                if (!Application.isPlaying)
+                {
+                    EditorSceneManager.MarkSceneDirty( EditorSceneManager.GetActiveScene() );
+                }
+            }
         }
     }
 }

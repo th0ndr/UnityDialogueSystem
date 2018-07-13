@@ -1,36 +1,54 @@
 ﻿namespace DialogueManager.Controllers
 {
-    using DialogueManager.GameComponents;
-    using DialogueManager.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using DialogueManager.GameComponents;
+    using DialogueManager.Models;
 
+    /// <summary>
+    /// Controller for the GameConversations Component
+    /// </summary>
     public class GameConversationsController
     {
-        public GameConversations Model;
+        /// <summary>
+        /// Model of the GameConversation
+        /// </summary>
+        private GameConversations model;
 
-        public GameConversationsController(GameConversations gameConversations)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameConversationsController"/> class.
+        /// </summary>
+        /// <param name="gameConversations">Model of the GameConversations</param>
+        public GameConversationsController( GameConversations gameConversations )
         {
-            gameConversations.PendingConversations = new List<PendingConversation>();
+            gameConversations.PendingConversations = new Dictionary<string, List<PendingStatus>>();
             gameConversations.ConversationsToAdd = new List<PendingStatus>();
-            this.Model = gameConversations;
+            this.model = gameConversations;
         }
-        
+
+        /// <summary>
+        /// Creates a Key on the PendingConversations with the name of the Conversation if it doesn't exists already.
+        /// Adds the first element in ConversationsToAdd to the Value PendingConversations with the correct key and sorts the list.
+        /// </summary>
         public void AddConversation()
         {
-            // CHECAR SI YA EXISTEN FALTA
-            // ESTA CLASE VA A CAMBIAR BASTANTE
-            PendingStatus conversation = this.Model.ConversationsToAdd[0];
-            this.Model.ConversationsToAdd.RemoveAt( 0 );
-            this.Model.PendingConversations.Add( new PendingConversation
+            PendingStatus unlockedStatus = this.model.ConversationsToAdd[0];
+            this.model.ConversationsToAdd.RemoveAt( 0 );
+            Dictionary<string, List<PendingStatus>> conversations = this.model.PendingConversations;
+            if (!conversations.ContainsKey( unlockedStatus.ConversationName ))
             {
-                ConversationName = conversation.ConversationName,
-                PendingStatus = new List<PendingStatus> {
-                        conversation,
-                    }
-            } );
+                conversations[unlockedStatus.ConversationName] = new List<PendingStatus>();
+            }
+
+            List<PendingStatus> pending = conversations[unlockedStatus.ConversationName];
+            PendingStatus match = pending.Where( status => status.ConversationName == unlockedStatus.StatusName ).FirstOrDefault();
+            if (match == null)
+            {
+                pending.Add( unlockedStatus );
+                pending.OrderBy( status => status.Importance );
+            }
         }
     }
 }
