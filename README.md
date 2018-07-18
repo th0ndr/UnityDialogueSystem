@@ -7,8 +7,20 @@ Unity Dialogue Manager is being used to create better RPG experiences, as well a
 
 - Author: Ricgby & Scroll Something Studios
 - Email: scrollsomething@gmail.com
-- Twitter: [@Ricgby](https://twitter.com/ricgby) [@ScrollSomething](https://twitter.com/ScrollSomething)
+- Twitter: [@Ricgby](https://twitter.com/ricgby) and [@ScrollSomething](https://twitter.com/ScrollSomething)
 - Discord: https://discord.gg/VqjUYe
+
+Features
+============
+
+* Words spell out like a typewriter.
+* Text effects (colours, shaky text, wavy text).
+* Customizable text speed mid dialogue.
+* Character creation.
+* Different voices and expressions for characters.
+* Easy to implement.
+* Easy to learn.
+* Open source.
 
 Installation
 ============
