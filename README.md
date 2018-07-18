@@ -13,6 +13,8 @@ Unity Dialogue Manager is being used to create better RPG experiences, as well a
 Features
 ============
 
+Unity dialogue system has the following features:
+
 * Words spell out like a typewriter.
 * Text effects (colours, shaky text, wavy text).
 * Customizable text speed mid dialogue.
