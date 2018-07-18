@@ -1,4 +1,4 @@
-Unity Dialogue Manager
+Unity Dialogue Manager - Work in Progress
 ======
 
 The goal of Unity Dialogue Manager is to provide a free, open source tool for creating a interactive Dialogue Manager System in Unity 3D. Unity Dialogue Manager is designed to be easy to learn for beginners, and easy to implement to your existing projects :). It provides an intuitive workflow for easy and beautiful storytelling.
