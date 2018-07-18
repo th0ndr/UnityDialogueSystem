@@ -24,10 +24,10 @@ Unity dialogue system has the following features:
 * Easy to learn.
 * Open source.
 
-Installation
+Installation & Documentation
 ============
 
-Download & installation instructions and tutorial videos are available on the official Dialogue Manager System wiki.
+Download & installation instructions and tutorial videos are available on the official Dialogue Manager System wiki, as well as our full documentation:
 https://github.com/ricgby/UnityDialogueSystem/wiki
 
 Support
