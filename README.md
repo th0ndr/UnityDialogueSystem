@@ -8,7 +8,7 @@ Unity Dialogue Manager is being used to create better RPG experiences, as well a
 - Author: Ricgby & Scroll Something Studios
 - Email: scrollsomething@gmail.com
 - Twitter: [@Ricgby](https://twitter.com/ricgby) and [@ScrollSomething](https://twitter.com/ScrollSomething)
-- Discord: https://discord.gg/VqjUYe
+- Discord: https://discord.gg/XdQ75kS
 
 Features
 ============
@@ -36,6 +36,6 @@ Support
 If you have questions about Dialogue Manager, please search our forum first as someone may have had the same issue already. If you can't find an answer please start a new discussion and we'll answer you as soon as we can. Unity Dialogue Manager is designed for beginners and we love to hear from users so please don't be shy about posting!
 https://scrollsomething.itch.io/unitydialoguesystem
 
-You can also join into our [discord](https://discord.gg/VqjUYe), or send me a [tweet](https://twitter.com/ricgby)!
+You can also join into our [discord](https://discord.gg/XdQ75kS), or send me a [tweet](https://twitter.com/ricgby)!
 
 
