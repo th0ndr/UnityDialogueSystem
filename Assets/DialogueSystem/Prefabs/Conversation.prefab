@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1124329079210094}
+  m_IsPrefabParent: 1
+--- !u!1 &1124329079210094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4021053425532408}
+  - component: {fileID: 114206594035310520}
+  - component: {fileID: 114526646836521260}
+  m_Layer: 0
+  m_Name: Conversation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4021053425532408
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124329079210094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.92, y: -0.312, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114206594035310520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124329079210094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc53e916504a7d4c81f732bb7b0d281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tracked: {fileID: 0}
+--- !u!114 &114526646836521260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124329079210094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886a3fe3bbb08b9459acef14402996f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Model:
+    Name: EdgarTerra
+    ActiveStatus:
+      Name: TestingNewConversation
+      NextStatusIndex: 0
+      Dialogue:
+        Sentences:
+        - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ah
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Eh
+        - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ih
+      NewConversations:
+      - ConversationName: Thoughts
+        StatusName: Desbloqueada
+        Importance: 0
+    ActiveStatusIndex: 1
+    Status:
+    - Name: EmptyConv
+      NextStatusIndex: 0
+      Dialogue:
+        Sentences:
+        - Character: {fileID: 0}
+          ExpressionIndex: 0
+          Paragraph: 
+      NewConversations: []
+    - Name: TestingNewConversation
+      NextStatusIndex: 0
+      Dialogue:
+        Sentences:
+        - Character: {fileID: 11400000, guid: b4535de8479ad3c469e54fc3d08e7dde, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ah
+        - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Eh
+        - Character: {fileID: 11400000, guid: 56e30bb1786e49441a1788dc2681a6e6, type: 2}
+          ExpressionIndex: 0
+          Paragraph: Ih
+      NewConversations:
+      - ConversationName: Thoughts
+        StatusName: Desbloqueada
+        Importance: 0
