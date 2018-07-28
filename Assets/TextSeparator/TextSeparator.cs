@@ -22,13 +22,14 @@ public class TextSeparator : MonoBehaviour {
             myText.alignment = TextAnchor.LowerCenter;
             myText.font = font;
             myText.material = material;
-            myText.GetComponent<RectTransform>().localPosition = new Vector3(parentTransform.localPosition.x , parentTransform.localPosition.y, myText.rectTransform.localPosition.z);
+            //myText.GetComponent<RectTransform>().localPosition = new Vector3(parentTransform.localPosition.x + (i*17) , parentTransform.localPosition.y, myText.rectTransform.localPosition.z);
+            myText.GetComponent<RectTransform>().localPosition = new Vector3(  i * 17 , 0, 0);
             myText.fontSize = 40;
             myText.color = new Color(1f, 0.0f, 0.0f,1.0f);
 
-            newGO.AddComponent<ShakeText>();
-            //newGO.AddComponent<WaveText>();
-            //newGO.GetComponent<WaveText>().Offset = .15f * i;
+            //newGO.AddComponent<ShakeText>();
+            newGO.AddComponent<WaveText>();
+            newGO.GetComponent<WaveText>().Offset = .15f * i;
         }
        
     }
