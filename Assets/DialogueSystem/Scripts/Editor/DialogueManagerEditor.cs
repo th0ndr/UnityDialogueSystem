@@ -14,6 +14,8 @@
         private SerializedProperty voiceVolumeProperty;
         private SerializedProperty doubleTapProperty;
         private SerializedProperty nextKeyProperty;
+        private SerializedProperty fontProperty;
+        private SerializedProperty materialProperty;
         void OnEnable()
         {
             gameConversationsProperty = serializedObject.FindProperty("Model.GameConversationsPrefab");
@@ -22,6 +24,8 @@
             voiceVolumeProperty = serializedObject.FindProperty( "Model.VoiceVolume" );
             doubleTapProperty = serializedObject.FindProperty( "Model.DoubleTap" );
             nextKeyProperty = serializedObject.FindProperty( "Model.NextKey" );
+            fontProperty = serializedObject.FindProperty( "Model.Font" );
+            materialProperty = serializedObject.FindProperty( "Model.Material" );
         }
 
         public override void OnInspectorGUI()
@@ -33,6 +37,8 @@
             EditorGUILayout.PropertyField( voiceVolumeProperty, true );
             EditorGUILayout.PropertyField( doubleTapProperty, true );
             EditorGUILayout.PropertyField( nextKeyProperty, true );
+            EditorGUILayout.PropertyField( fontProperty, false );
+            EditorGUILayout.PropertyField( materialProperty, false );
             serializedObject.ApplyModifiedProperties();
         }
     }

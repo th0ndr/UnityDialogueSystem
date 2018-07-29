@@ -25,11 +25,22 @@
         {
             GameObject gameConversations = Instantiate( this.Model.GameConversationsPrefab );
             gameConversations.name = "GameConversations";
-            GameObject canvasObjects = Instantiate( this.Model.CanvasObjectsPrefab );
-            canvasObjects.name = "DialogueCanvas";
 
-            this.Model.DialogueText = GameObject.Find( "/DialogueCanvas/DialogueBox/DialogueText" ).GetComponent<Text>();
-            this.Model.ImageText = GameObject.Find( "/DialogueCanvas/DialogueBox/Image" ).GetComponent<Image>();
+            /*
+            GameObject canvasObject = new GameObject( "DialogueCanvas", typeof(RectTransform) );
+            Canvas canvas = canvasObject.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.WorldSpace;
+            */
+            Transform canvasObject = GameObject.Find( "DialogueCanvas" ).GetComponent<Transform>();
+            GameObject dialogueBox = Instantiate( this.Model.CanvasObjectsPrefab );
+            dialogueBox.transform.position = new Vector3( -250, 0, 0 );
+            dialogueBox.name = "DialogueBox";
+            dialogueBox.transform.SetParent( canvasObject.transform );
+            dialogueBox.GetComponent<RectTransform>().localPosition = new Vector3( 0, -500, 0 );
+
+
+            this.Model.DialogueStartPoint = GameObject.Find( "/DialogueCanvas/DialogueBox/DialogueStartPoint" ).GetComponent<Transform>();
+            this.Model.ImageText = GameObject.Find( "/DialogueCanvas/DialogueBox/CharacterImage" ).GetComponent<Image>();
             this.Model.Animator = GameObject.Find( "/DialogueCanvas/DialogueBox" ).GetComponent<Animator>();
             this.Model.Source = this.GetComponent<AudioSource>();
 

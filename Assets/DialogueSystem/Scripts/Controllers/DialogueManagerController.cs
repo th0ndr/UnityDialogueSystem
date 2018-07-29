@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using DialogueManager.Models;
     using UnityEngine;
+    using UnityEngine.UI;
 
     public class DialogueManagerController
     {
@@ -15,13 +16,20 @@
         private string timeString, sentence;
         private Expression expression;
 
+        private List<GameObject> letters;
+        private int fontSize = 30;
+        private int boxSize = 380;
+        private int currentX = 0;
+        private int currentY = 0;
+
         public DialogueManager Model;
         public DialogueManagerController( DialogueManager Model )
         {
             this.Model = Model;
-            sentences = new Queue<string>();
-            sprites = new Queue<Sprite>();
-            voices = new Queue<AudioClip>();
+            this.sentences = new Queue<string>();
+            this.sprites = new Queue<Sprite>();
+            this.voices = new Queue<AudioClip>();
+            this.letters = new List<GameObject>();
         }
 
         /// <summary>
@@ -52,6 +60,13 @@
         /// <returns>If there was a Sentence to be displayed or not</returns>
         public bool DisplayNextSentence()
         {
+            foreach (GameObject character in this.letters) {
+                GameObject.Destroy( character );
+            }
+            this.letters.Clear();
+            this.currentX = 0;
+            this.currentY = 0;
+
             if (sentences.Count == 0)
             {
                 EndDialogue();
@@ -59,30 +74,53 @@
             }
 
             this.Model.ImageText.sprite = sprites.Dequeue();
-            sentence = sentences.Dequeue();
-            audioQueue = voices.Dequeue();
+            this.sentence = sentences.Dequeue();
+            this.audioQueue = voices.Dequeue();
             this.Model.WaitTime = 0f;
-            return true;
-        }
 
+            string[] words = this.sentence.Split( ' ' );
+            int letterSpacing = ( int )( this.fontSize * 0.5 );
 
-        /// <summary>
-        /// Find Expression in characcter, by expression name.
-        /// </summary>
-        /// <param name="name">Name of the Expression.</param>
-        /// <param name="character">Character in which the Expression will be found.</param>
-        /// <returns>Expression that was being looked for, returns null if there wasn't any.</returns>
-        private Expression FindExpression( string name, Character character )
-        {
-            foreach (Expression expression in character.Expressions)
+            foreach (string word in words)
             {
-                if (expression.Name.Equals( name ))
+                GameObject wordObject = new GameObject( word, typeof( RectTransform ) );
+                wordObject.transform.SetParent( this.Model.DialogueStartPoint );
+                int wordSize = word.Length * letterSpacing;
+                if (this.currentX + wordSize > this.boxSize)
                 {
-                    return ( expression );
+                    this.currentX = 0;
+                    this.currentY -= (int) (this.fontSize * 0.9);
                 }
-            }
+                wordObject.GetComponent<RectTransform>().localPosition = new Vector3( currentX, currentY, 0 );
 
-            return null;
+                for (int i = 0; i < word.Length; i++)
+                {
+                    GameObject letterObject = new GameObject( word[i].ToString() );
+                    letterObject.transform.SetParent( wordObject.transform );
+
+                    Text myText = letterObject.AddComponent<Text>();
+
+                    RectTransform parentTransform = this.Model.DialogueStartPoint.GetComponentInParent<RectTransform>();
+                    myText.text = word[i].ToString();
+                    myText.alignment = TextAnchor.LowerCenter;
+                    myText.fontSize = this.fontSize;
+                    myText.font = this.Model.Font;
+                    myText.material = this.Model.Material;
+                    myText.GetComponent<RectTransform>().localPosition = new Vector3( i * letterSpacing, 0, 0 );
+
+                    myText.color = new Color( 0.0f, 0.0f, 0.0f, 0.0f );
+                    RectTransform rt = letterObject.GetComponentInParent<RectTransform>();
+                    rt.sizeDelta = new Vector2( this.fontSize, this.fontSize );
+                    rt.pivot = new Vector2( 0, 1 );
+                    letterObject.AddComponent<ShakeText>();
+                    //letterObject.AddComponent<WaveText>();
+                    //letterObject.GetComponent<WaveText>().Offset = .15f * i;
+
+                    this.letters.Add( letterObject );
+                }
+                currentX += wordSize + letterSpacing;
+            }
+            return true;
         }
 
         /// <summary>
@@ -93,10 +131,18 @@
         {
             timeString = "";
             parsing = false;
-            this.Model.DialogueText.text = "";
+            // this.Model.DialogueText.text = "";
 
-            foreach (char letter in sentence.ToCharArray())
+            foreach (GameObject letter in this.letters)
             {
+                if (letter == null) {
+                    break;
+                }
+                Text text = letter.GetComponent<Text>();
+                text.color = new Color( 0.0f, 0.0f, 0.0f, 1.0f );
+                this.Model.Source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
+                yield return new WaitForSeconds( this.Model.WaitTime );
+                /*
                 if (letter == '[')
                 {
                     parsing = true;
@@ -120,17 +166,18 @@
                 {
                     if (Input.GetKeyDown( this.Model.NextKey ) && this.Model.Finished == false)
                     {
-                        this.Model.DialogueText.text = ParseSentence( sentence );
+                        // this.Model.DialogueText.text = ParseSentence( sentence );
                         this.Model.Finished = true;
                         yield break;
                     }
                     else
                     {
-                        this.Model.DialogueText.text += letter;
+                        // this.Model.DialogueText.text += letter;
                         this.Model.Source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
                         yield return new WaitForSeconds( this.Model.WaitTime );
                     }
                 }
+                */
             }
             this.Model.Finished = true;
         }
