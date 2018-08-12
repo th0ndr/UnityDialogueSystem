@@ -17,10 +17,15 @@
         private Expression expression;
 
         private List<GameObject> letters;
+        private List<float> speeds;
+        private List<int> effects;
         private int fontSize = 30;
         private int boxSize = 380;
         private int currentX = 0;
         private int currentY = 0;
+
+        private float currentSpeed = 0.01f;
+        private int currentEffect = 0;
 
         public DialogueManager Model;
         public DialogueManagerController( DialogueManager Model )
@@ -30,6 +35,8 @@
             this.sprites = new Queue<Sprite>();
             this.voices = new Queue<AudioClip>();
             this.letters = new List<GameObject>();
+            this.speeds = new List<float>();
+            this.effects = new List<int>();
         }
 
         /// <summary>
@@ -60,9 +67,15 @@
         /// <returns>If there was a Sentence to be displayed or not</returns>
         public bool DisplayNextSentence()
         {
-            foreach (GameObject character in this.letters) {
+            foreach (GameObject character in this.letters)
+            {
                 GameObject.Destroy( character );
             }
+
+            this.currentSpeed = this.Model.WaitTime;
+            this.currentEffect = 0;
+            this.effects.Clear();
+            this.speeds.Clear();
             this.letters.Clear();
             this.currentX = 0;
             this.currentY = 0;
@@ -77,10 +90,32 @@
             this.sentence = sentences.Dequeue();
             this.audioQueue = voices.Dequeue();
             this.Model.WaitTime = 0f;
+            string onlyWords = string.Empty;
 
-            string[] words = this.sentence.Split( ' ' );
+            for (int i = 0; i < this.sentence.Length; i++)
+            {
+                if (this.sentence[i] == '[')
+                {
+                    i = this.changeSpeed( i );
+                }
+                else if (this.sentence[i] == '<')
+                {
+                    i = this.changeEffect( i );
+                }
+                else
+                {
+                    this.effects.Add( this.currentEffect );
+                    if (this.sentence[i] != ' ')
+                    {
+                        this.speeds.Add( ( float )this.currentSpeed );
+                    }
+                    onlyWords += this.sentence[i];
+                }
+            }
+
+            string[] words = onlyWords.Split( ' ' );
             int letterSpacing = ( int )( this.fontSize * 0.5 );
-
+            int currentIndex = 0;
             foreach (string word in words)
             {
                 GameObject wordObject = new GameObject( word, typeof( RectTransform ) );
@@ -89,7 +124,7 @@
                 if (this.currentX + wordSize > this.boxSize)
                 {
                     this.currentX = 0;
-                    this.currentY -= (int) (this.fontSize * 0.9);
+                    this.currentY -= ( int )( this.fontSize * 0.9 );
                 }
                 wordObject.GetComponent<RectTransform>().localPosition = new Vector3( currentX, currentY, 0 );
 
@@ -112,15 +147,53 @@
                     RectTransform rt = letterObject.GetComponentInParent<RectTransform>();
                     rt.sizeDelta = new Vector2( this.fontSize, this.fontSize );
                     rt.pivot = new Vector2( 0, 1 );
-                    letterObject.AddComponent<ShakeText>();
-                    //letterObject.AddComponent<WaveText>();
-                    //letterObject.GetComponent<WaveText>().Offset = .15f * i;
-
+                    
+                    if (this.effects[currentIndex] == 1)
+                    {
+                        letterObject.AddComponent<AngryEffect>();
+                    }
                     this.letters.Add( letterObject );
+                    currentIndex++;
                 }
                 currentX += wordSize + letterSpacing;
+                currentIndex++;
             }
             return true;
+        }
+
+        public int changeSpeed( int i )
+        {
+            i++;
+            string speed = string.Empty;
+            while (this.sentence[i] != ']')
+            {
+                speed += this.sentence[i];
+                i++;
+            }
+            this.currentSpeed = float.Parse( speed );
+            return i;
+        }
+
+        public int changeEffect( int i )
+        {
+            i++;
+            string effect = string.Empty;
+            while (this.sentence[i] != '>')
+            {
+                effect += this.sentence[i];
+                i++;
+            }
+
+            if (effect.Equals( "angry" ))
+            {
+                this.currentEffect = 1;
+            }
+            else
+            {
+                this.currentEffect = 0;
+            }
+
+            return i;
         }
 
         /// <summary>
@@ -131,53 +204,19 @@
         {
             timeString = "";
             parsing = false;
-            // this.Model.DialogueText.text = "";
-
+            int currentIndex = 0;
             foreach (GameObject letter in this.letters)
             {
-                if (letter == null) {
+                if (letter == null)
+                {
                     break;
                 }
                 Text text = letter.GetComponent<Text>();
                 text.color = new Color( 0.0f, 0.0f, 0.0f, 1.0f );
                 this.Model.Source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
-                yield return new WaitForSeconds( this.Model.WaitTime );
-                /*
-                if (letter == '[')
-                {
-                    parsing = true;
-                }
-
-                if (parsing)
-                {
-                    if (letter == ']')
-                    {
-                        parsing = false;
-                        this.Model.WaitTime = float.Parse( timeString );
-                        timeString = "";
-                    }
-
-                    if (letter != '[' && letter != ']')
-                    {
-                        timeString += letter;
-                    }
-                }
-                else
-                {
-                    if (Input.GetKeyDown( this.Model.NextKey ) && this.Model.Finished == false)
-                    {
-                        // this.Model.DialogueText.text = ParseSentence( sentence );
-                        this.Model.Finished = true;
-                        yield break;
-                    }
-                    else
-                    {
-                        // this.Model.DialogueText.text += letter;
-                        this.Model.Source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
-                        yield return new WaitForSeconds( this.Model.WaitTime );
-                    }
-                }
-                */
+                //yield return new WaitForSeconds( this.Model.WaitTime );
+                yield return new WaitForSeconds( this.speeds[currentIndex] );
+                currentIndex++;
             }
             this.Model.Finished = true;
         }

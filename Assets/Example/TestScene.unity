@@ -459,7 +459,9 @@ MonoBehaviour:
         Sentences:
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 0
-          Paragraph: Pepe pica papas con un pico, pica pepe papas con el pico.
+          Paragraph: 'This text is normal.
+
+            This text is <angry>[0.5]angry'
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 1
           Paragraph: AHHHHHHHHHHHHHHHHHHH
@@ -472,7 +474,9 @@ MonoBehaviour:
         Sentences:
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 0
-          Paragraph: Pepe pica papas con un pico, pica pepe papas con el pico.
+          Paragraph: 'This text is normal.
+
+            This text is <angry>[0.5]angry'
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 1
           Paragraph: AHHHHHHHHHHHHHHHHHHH
