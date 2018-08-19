@@ -7,7 +7,7 @@ Unity Dialogue Manager is being used to create better RPG experiences, as well a
 
 - Author: Ricgby & Scroll Something Studios
 - Email: scrollsomething@gmail.com
-- Twitter: [@Ricgby](https://twitter.com/ricgby) and [@ScrollSomething](https://twitter.com/ScrollSomething)
+- Twitter: [@ScrollSomething](https://twitter.com/ScrollSomething)
 - Discord: https://discord.gg/XdQ75kS
 
 Features
