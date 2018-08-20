@@ -6,7 +6,7 @@
     using UnityEngine;
     using UnityEngine.UI;
 
-    public class DialogueManagerController
+    public class DialogueManagerController : MonoBehaviour
     {
         private Queue<string> sentences;
         private Queue<Sprite> sprites;
@@ -16,16 +16,16 @@
         private string timeString, sentence;
         private Expression expression;
 
-        private List<GameObject> letters;
+        private List<LetterComponent> letters;
         private List<float> speeds;
-        private List<int> effects;
+        private List<ITextEffectBuilder> effects;
         private int fontSize = 30;
         private int boxSize = 380;
         private int currentX = 0;
         private int currentY = 0;
 
         private float currentSpeed = 0.01f;
-        private int currentEffect = 0;
+        private ITextEffectBuilder currentEffect = null;
 
         public DialogueManager Model;
         public DialogueManagerController( DialogueManager Model )
@@ -34,9 +34,9 @@
             this.sentences = new Queue<string>();
             this.sprites = new Queue<Sprite>();
             this.voices = new Queue<AudioClip>();
-            this.letters = new List<GameObject>();
+            this.letters = new List<LetterComponent>();
             this.speeds = new List<float>();
-            this.effects = new List<int>();
+            this.effects = new List<ITextEffectBuilder>();
         }
 
         /// <summary>
@@ -67,13 +67,13 @@
         /// <returns>If there was a Sentence to be displayed or not</returns>
         public bool DisplayNextSentence()
         {
-            foreach (GameObject character in this.letters)
+            foreach (LetterComponent letter in this.letters)
             {
-                GameObject.Destroy( character );
+                GameObject.Destroy( letter.gameObject );
             }
 
             this.currentSpeed = this.Model.WaitTime;
-            this.currentEffect = 0;
+            this.currentEffect = null;
             this.effects.Clear();
             this.speeds.Clear();
             this.letters.Clear();
@@ -115,7 +115,8 @@
 
             string[] words = onlyWords.Split( ' ' );
             int letterSpacing = ( int )( this.fontSize * 0.5 );
-            int currentIndex = 0;
+            int currentIndexEffects = 0;
+            int currentIndexSpeeds = 0;
             foreach (string word in words)
             {
                 GameObject wordObject = new GameObject( word, typeof( RectTransform ) );
@@ -132,31 +133,37 @@
                 {
                     GameObject letterObject = new GameObject( word[i].ToString() );
                     letterObject.transform.SetParent( wordObject.transform );
-
                     Text myText = letterObject.AddComponent<Text>();
-
-                    RectTransform parentTransform = this.Model.DialogueStartPoint.GetComponentInParent<RectTransform>();
                     myText.text = word[i].ToString();
                     myText.alignment = TextAnchor.LowerCenter;
                     myText.fontSize = this.fontSize;
                     myText.font = this.Model.Font;
                     myText.material = this.Model.Material;
                     myText.GetComponent<RectTransform>().localPosition = new Vector3( i * letterSpacing, 0, 0 );
-
                     myText.color = new Color( 0.0f, 0.0f, 0.0f, 0.0f );
                     RectTransform rt = letterObject.GetComponentInParent<RectTransform>();
                     rt.sizeDelta = new Vector2( this.fontSize, this.fontSize );
                     rt.pivot = new Vector2( 0, 1 );
+
+                    LetterComponent letterComponent = letterObject.AddComponent<LetterComponent>();
                     
-                    if (this.effects[currentIndex] == 1)
+                    Letter newLetter = new Letter
                     {
-                        letterObject.AddComponent<AngryEffect>();
+                        Character = word[i],
+                        Speed = this.speeds[currentIndexSpeeds],
+                        isActive = false
+                    };
+                    if (this.effects[currentIndexEffects] != null)
+                    {
+                        newLetter.Effect = this.effects[currentIndexEffects].Build( letterObject );
                     }
-                    this.letters.Add( letterObject );
-                    currentIndex++;
+                    letterComponent.Model = newLetter;
+                    this.letters.Add( letterComponent );
+                    currentIndexEffects++;
+                    currentIndexSpeeds++;
                 }
                 currentX += wordSize + letterSpacing;
-                currentIndex++;
+                currentIndexEffects++;
             }
             return true;
         }
@@ -184,15 +191,14 @@
                 i++;
             }
 
-            if (effect.Equals( "angry" ))
+            if (TextEffect.effects.ContainsKey( effect ))
             {
-                this.currentEffect = 1;
+                this.currentEffect = TextEffect.effects[effect];
             }
             else
             {
-                this.currentEffect = 0;
+                this.currentEffect = null;
             }
-
             return i;
         }
 
@@ -204,8 +210,7 @@
         {
             timeString = "";
             parsing = false;
-            int currentIndex = 0;
-            foreach (GameObject letter in this.letters)
+            foreach (LetterComponent letter in this.letters)
             {
                 if (letter == null)
                 {
@@ -214,9 +219,7 @@
                 Text text = letter.GetComponent<Text>();
                 text.color = new Color( 0.0f, 0.0f, 0.0f, 1.0f );
                 this.Model.Source.PlayOneShot( audioQueue, this.Model.VoiceVolume );
-                //yield return new WaitForSeconds( this.Model.WaitTime );
-                yield return new WaitForSeconds( this.speeds[currentIndex] );
-                currentIndex++;
+                yield return new WaitForSeconds( letter.Model.Speed );
             }
             this.Model.Finished = true;
         }

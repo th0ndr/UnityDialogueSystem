@@ -459,12 +459,12 @@ MonoBehaviour:
         Sentences:
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 0
-          Paragraph: 'This text is normal.
-
-            This text is <angry>[0.5]angry'
+          Paragraph: '[0.2] I''m feeling.[0.4]...[0.01]<angry> ANGRY</angry>!!'
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 1
-          Paragraph: AHHHHHHHHHHHHHHHHHHH
+          Paragraph: '[0.05]And <wave>veeeery wavey</wave>.
+
+            [0.01]But that''s another story'
       NewConversations: []
     ActiveStatusIndex: 0
     Status:
@@ -474,12 +474,12 @@ MonoBehaviour:
         Sentences:
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 0
-          Paragraph: 'This text is normal.
-
-            This text is <angry>[0.5]angry'
+          Paragraph: '[0.2] I''m feeling.[0.4]...[0.01]<angry> ANGRY</angry>!!'
         - Character: {fileID: 11400000, guid: a2df4dee82fc7e74c8067dac50ff6680, type: 2}
           ExpressionIndex: 1
-          Paragraph: AHHHHHHHHHHHHHHHHHHH
+          Paragraph: '[0.05]And <wave>veeeery wavey</wave>.
+
+            [0.01]But that''s another story'
       NewConversations: []
     - Name: Nada
       NextStatusIndex: 1

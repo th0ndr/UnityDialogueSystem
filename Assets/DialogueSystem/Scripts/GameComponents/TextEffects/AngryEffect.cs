@@ -6,17 +6,13 @@ public class AngryEffect : TextEffect
 {
     public float Magnitude = 2f;
 
-    private Vector3 m_startPos;
-
-    private void Start()
+    public AngryEffect( GameObject gameObject ) : base( gameObject )
     {
-        m_startPos = transform.localPosition;
     }
-
-    private void Update()
+    public override void Update()
     {
         float x = Random.Range( -Magnitude, Magnitude );
         float y = Random.Range( -Magnitude, Magnitude );
-        transform.localPosition = m_startPos + new Vector3( x, y, 0.0f );
+        this.gameObject.transform.localPosition = m_startPos + new Vector3( x, y, 0.0f );
     }
 }

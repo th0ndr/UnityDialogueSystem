@@ -10,16 +10,18 @@ public class WaveEffect : TextEffect
     public float Magnitude = 1.5f;
     public float Offset;
 
-    private Vector3 m_startPos;
+    public WaveEffect( GameObject gameObject ) : base( gameObject )
+    {
+    }
 
     private void Start()
     {
-        m_startPos = transform.localPosition;
+        m_startPos = this.gameObject.transform.localPosition;
     }
 
-    private void Update()
+    public override void Update()
     {
         float y = Mathf.Sin( ( Offset + Time.time ) * Frequency ) * Magnitude;
-        transform.localPosition = m_startPos + new Vector3( 0.0f, y, 0.0f );
+        this.gameObject.transform.localPosition = m_startPos + new Vector3( 0.0f, y, 0.0f );
     }
 }
