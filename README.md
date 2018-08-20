@@ -5,7 +5,7 @@ The goal of Unity Dialogue Manager is to provide a free, open source tool for cr
 
 Unity Dialogue Manager is being used to create better RPG experiences, as well as Visual Novels, Point and Click Adventures and so on.
 
-- Author: Ricgby & Scroll Something Studios
+- Author: Scroll Something Studios
 - Email: scrollsomething@gmail.com
 - Twitter: [@ScrollSomething](https://twitter.com/ScrollSomething)
 - Discord: https://discord.gg/XdQ75kS
@@ -36,6 +36,6 @@ Support
 If you have questions about Dialogue Manager, please search our forum first as someone may have had the same issue already. If you can't find an answer please start a new discussion and we'll answer you as soon as we can. Unity Dialogue Manager is designed for beginners and we love to hear from users so please don't be shy about posting!
 https://scrollsomething.itch.io/unitydialoguesystem
 
-You can also join into our [discord](https://discord.gg/XdQ75kS), or send me a [tweet](https://twitter.com/ricgby)!
+You can also join into our [discord](https://discord.gg/XdQ75kS), we will try to help you there :)
 
 
