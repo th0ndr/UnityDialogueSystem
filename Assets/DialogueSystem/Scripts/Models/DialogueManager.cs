@@ -31,8 +31,14 @@
         /// <summary> Key which must be pressed to continue to the next Sentence. </summary>
         public string NextKey = "z";
 
+        /// <summary> Font </summary>
+        public Font Font;
+
+        /// <summary> FontMaterial </summary>
+        public Material Material;
+
         /// <summary> Gets or sets the Text that is being displayed on the Scene. </summary>
-        public Text DialogueText { get; set; }
+        public Transform DialogueStartPoint { get; set; }
 
         /// <summary> Gets or sets the Image that is being displayed on the Scene. </summary>
         public Image ImageText { get; set; }

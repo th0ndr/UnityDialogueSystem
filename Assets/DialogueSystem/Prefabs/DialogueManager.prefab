@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model:
-    CanvasObjectsPrefab: {fileID: 1976183081792064, guid: f23d949b7b4184f4f8eec5c8410d40c9,
+    CanvasObjectsPrefab: {fileID: 1703086782174116, guid: cc81ee01cdeab2c4f9ec9c510c8bdb63,
       type: 2}
     GameConversationsPrefab: {fileID: 1812350911334218, guid: b2e760a7c2b3f1847974ea1e1f6abd01,
       type: 2}
@@ -156,3 +156,5 @@ MonoBehaviour:
     VoiceVolume: 1
     DoubleTap: 1
     NextKey: z
+    Font: {fileID: 12800000, guid: 80e4d38f29cb74400ae3d46796b5a2b4, type: 3}
+    Material: {fileID: 2100000, guid: 80e4d38f29cb74400ae3d46796b5a2b4, type: 3}

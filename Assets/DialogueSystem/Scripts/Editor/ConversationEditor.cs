@@ -52,7 +52,7 @@
             }
 
             EditorGUILayout.Space();
-            EditorGUILayout.Space();
+            EditorGUILayout.Space();    
 
             if (EditorGUI.EndChangeCheck())
             {
